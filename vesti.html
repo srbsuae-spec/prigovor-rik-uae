@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bilten birača UAE</title>
+<meta name="description" content="Pregled onoga što je urađeno povodom biračkih mesta u UAE: RIK, mediji, međunarodne institucije i pravni koraci.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap">
+<style>
+/* Bilten: zaglavlje sa datumom, traka statusa po oblastima, pa numerisane oblasti kao u poruci radne grupe. */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --ink:#152033; --muted:#566173; --line:#d6dce5;
+  --navy:#1c3361; --navy-ink:#ffffff; --red:#a3302b; --hl:#e7ecf5;
+  --wait:#8a5a00; --wait-bg:#fbf1df; --ok:#24684a; --ok-bg:#e3f2ea; --sent:#1f4f8f; --sent-bg:#e4ecf8; --plan:#5b6475; --plan-bg:#eceef2;
+  --f-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --card:#171e29; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --hl:#24304a;
+  --wait:#f0cf8f; --wait-bg:#2f2614; --ok:#86d0aa; --ok-bg:#16301f; --sent:#a9c4f0; --sent-bg:#1a2a44; --plan:#b3bccb; --plan-bg:#232b38; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --card:#171e29; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --hl:#24304a;
+  --wait:#f0cf8f; --wait-bg:#2f2614; --ok:#86d0aa; --ok-bg:#16301f; --sent:#a9c4f0; --sent-bg:#1a2a44; --plan:#b3bccb; --plan-bg:#232b38; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--f-body);margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:var(--f-display);color:var(--navy);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5.5vw,40px);line-height:1.12}
+h2{font-size:21px;line-height:1.25;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--red)}
+p{margin:0}
+a{color:var(--navy)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--red);display:flex;flex-wrap:wrap;gap:6px 14px}
+.eyebrow time{color:var(--muted)}
+header{display:flex;flex-direction:column;gap:10px}
+.lead{font-size:17px;color:var(--muted);max-width:62ch}
+
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,138px),1fr));gap:8px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;min-width:0}
+.st:hover{border-color:var(--navy)}
+.st .k{font-size:13px;font-weight:600;color:var(--muted)}
+.pill{align-self:flex-start;font-size:12.5px;font-weight:600;border-radius:99px;padding:2px 9px;line-height:1.4}
+.pill.wait{color:var(--wait);background:var(--wait-bg)}
+.pill.ok{color:var(--ok);background:var(--ok-bg)}
+.pill.sent{color:var(--sent);background:var(--sent-bg)}
+.pill.plan{color:var(--plan);background:var(--plan-bg)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0;scroll-margin-top:12px}
+.card .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.media{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.media li{display:grid;grid-template-columns:96px 1fr;gap:4px 14px;padding:12px 0;border-top:1px solid var(--line);min-width:0}
+.media li:first-child{border-top:0;padding-top:2px}
+.media .src{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--red);padding-top:2px}
+.media a{font-weight:600;text-decoration:none;line-height:1.35;overflow-wrap:anywhere}
+.media a:hover{text-decoration:underline}
+.media .dom{grid-column:2;font-size:12.5px;color:var(--muted);font-family:var(--f-mono);overflow-wrap:anywhere}
+@media (max-width:480px){.media li{grid-template-columns:1fr}.media .dom{grid-column:1}}
+ul.list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.note{font-size:14.5px;color:var(--muted)}
+.btn{font:inherit;font-weight:600;font-size:14px;padding:7px 12px;border-radius:7px;border:1px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.main{background:var(--navy);color:var(--navy-ink);font-size:15px;padding:10px 16px}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.help > div{border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.help b{font-size:15.5px}
+.mail{font-family:var(--f-mono);font-size:14px;font-weight:500;overflow-wrap:anywhere;user-select:all}
+.toast{color:var(--ok);font-weight:600;font-size:14px;min-height:1.3em}
+footer{font-size:13px;color:var(--muted);display:flex;flex-dir</head>
+<body>
+ection:column;gap:4px}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow"><span>Biračko pravo u UAE</span><time datetime="2026-10-06">6. oktobar 2026.</time></p>
+  <h1>Šta smo uradili i šta sledi</h1>
+  <p class="lead">Kratak pregled onoga što je do sada urađeno i šta planiramo u naredna dva dana.</p>
+</header>
+
+<nav class="status" aria-label="Stanje po oblastima">
+  <a class="st" href="#rik"><span class="k">RIK</span><span class="pill wait">Čeka se odgovor</span></a>
+  <a class="st" href="#mediji"><span class="k">Mediji</span><span class="pill ok">9 objava</span></a>
+  <a class="st" href="#medjunarodno"><span class="k">Međunarodno</span><span class="pill sent">Mejlovi poslati</span></a>
+  <a class="st" href="#dalje"><span class="k">Naredni koraci</span><span class="pill sent">Svakodnevno</span></a>
+  <a class="st" href="#pravno"><span class="k">Pravni koraci</span><span class="pill plan">Ako RIK ne reši</span></a>
+</nav>
+
+<section class="card" id="rik" aria-labelledby="h-rik">
+  <div class="head"><h2 id="h-rik"><span class="n">1</span>RIK</h2><span class="pill wait">Čeka se odgovor</span></div>
+  <p>Kontaktirali smo Republičku izbornu komisiju i trenutno čekamo njihov zvaničan odgovor.</p>
+</section>
+
+<section class="card" id="mediji" aria-labelledby="h-med">
+  <div class="head"><h2 id="h-med"><span class="n">2</span>Mediji</h2><span class="pill ok">9 objava</span></div>
+  <p>Kontaktirali smo veći broj medija i poslali informacije o situaciji. Tema je objavljena u više medija, a nastavljamo da kontaktiramo i druge redakcije.</p>
+  <ul class="media" id="media"></ul>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <button type="button" class="btn" id="copy-links">Kopiraj sve linkove za deljenje</button>
+    <span class="toast" id="toast" role="status"></span>
+  </div>
+</section>
+
+<section class="card" id="medjunarodno" aria-labelledby="h-int">
+  <div class="head"><h2 id="h-int"><span class="n">3</span>Međunarodne organizacije, institucije i mediji</h2><span class="pill sent">Mejlovi poslati</span></div>
+  <p>Obratili smo se mejlom:</p>
+  <ul class="list">
+    <li>Evropskom parlamentu;</li>
+    <li>međunarodnim medijima, poput Euronews, Deutsche Welle, Financial Times, Al Jazeera i Reuters;</li>
+    <li>organizacijama iz NGO sektora;</li>
+    <li>evropskim i međunarodnim organizacijama i agencijama, uključujući FRA, EUAA i UNESCO;</li>
+    <li>evropskim zvaničnicima, uključujući Martu Kos.</li>
+  </ul>
+</section>
+
+<section class="card" id="dalje" aria-labelledby="h-dalje">
+  <div class="head"><h2 id="h-dalje"><span class="n">4</span>Naredni koraci</h2><span class="pill sent">Svakodnevno</span></div>
+  <p>Nastavljamo svakodnevno da kontaktiramo relevantne međunarodne organizacije, institucije, zvaničnike i medije sa spiska koji smo pripremili.</p>
+</section>
+
+<section class="card" id="pravno" aria-labelledby="h-pravno">
+  <div class="head"><h2 id="h-pravno"><span class="n">5</span>Pravni koraci</h2><span class="pill plan">Ako RIK ne reši</span></div>
+  <p>Ako od RIK-a ne dobijemo odgovor ili adekvatno rešenje, sledeći korak je obraćanje Upravnom sudu i razmatranje daljih pravnih mogućnosti.</p>
+</section>
+
+<section class="card" aria-labelledby="h-help">
+  <h2 id="h-help">Kako možeš da pomogneš</h2>
+  <div class="help">
+    <div><b>Podeli tekstove</b><span class="note">Što više ljudi pročita, tema dobija veću vidljivost. Linkove iz dela „Mediji“ kopiraš jednim dugmetom.</span></div>
+    <div><b>Pošalji prigovor RIK-u</b><span class="note">Ako se nisi prijavio/la, formular pravi prigovor za 2 minuta.</span><a class="btn main" href="https://srbsuae-spec.github.io/prigovor-rik-uae/" target="_blank" rel="noopener">Otvori formular</a></div>
+    <div><b>Predlog ili kontakt?</b><span class="note">Svaki predlog, kontakt ili pomoć su dobrodošli. Javi se na:</span><span class="mail">info@srbsuae.com</span><button type="button" class="btn" id="copy-mail">Kopiraj adresu</button></div>
+  </div>
+</section>
+
+<footer>
+  <p>Ažurirano 6. 10. 2026.</p>
+</footer>
+</div>
+
+<script>
+const MEDIJI = [
+  { src: "FoNet", naslov: "Nemogućnost glasanja u UAE", url: "https://fonet.rs/politika/izbori-2026/36893287/nemogucnost-glasanja-u-uae-.html" },
+  { src: "Vreme", naslov: "Prvi put od otvaranja Ambasade Srbije u UAE državljani Srbije u Emiratima neće moći da glasaju", url: "https://vreme.com/vesti/prvi-put-od-otvaranja-ambasade-srbije-u-uae-drzavljani-srbije-u-emiratima-nece-moci-da-glasaju/" },
+  { src: "Danas", naslov: "Prvi put od otvaranja Ambasade Srbije u UAE, srpski državljani u Emiratima neće moći da glasaju", url: "https://www.danas.rs/vesti/politika/izbori26/glasanje-u-dubajiu/" },
+  { src: "N1", naslov: "Dijaspora iz UAE: Građani iz Emirata i drugih zemalja Bliskog istoka ostali bez biračkih mesta", url: "https://n1info.rs/vesti/dijaspora-iz-uae-gradjani-iz-emirata-i-drugih-zemalja-bliskog-istoka-ostali-bez-birackih-mesta/" },
+  { src: "Nova S", naslov: "Nikola Jovanović: Srpski državljani neće moći da glasaju u Abu Dabiju, niti na drugom biračkom mestu u UAE", url: "https://nova.rs/vesti/politika/nikola-jovanovic-srpski-drzavljani-nece-moci-da-glasaju-u-abu-dabiju-niti-na-drugom-birackom-mestu-u-uae/" },
+  { src: "Nedeljnik", naslov: "Prvi put od otvaranja Ambasade Srbije u UAE državljani Srbije u Emiratima neće moći da glasaju", url: "https://www.nedeljnik.rs/prvi-put-od-otvaranja-ambasade-srbije-u-uae-drzavljani-srbije-u-emiratima-nece-moci-da-glasaju/" },
+  { src: "N1", naslov: "Državljanin Srbije iz UAE: Prvi put u istoriji nemamo priliku da glasamo u ambasadi u Abu Dabiju, 800 prijavljenih", url: "https://n1info.rs/vesti/abu-dabi-ambasada-glasanje-biracko-mesto/" },
+  { src: "Rapporteur", naslov: "Exclusive: Serbs appeal to EU and OSCE over voting barriers", url: "https://www.rapporteur.com/news/exclusive-serbs-appeal-to-eu-and-osce-over-voting-barriers/" },
+  { src: "SNM", naslov: "Saopštenje za javnost: pitanje ostvarivanja biračkog prava dijaspore na predstojećim izborima", url: "https://snm.rs/saopstenje-za-javnost-pitanje-ostvarivanja-birackog-prava-dijaspore-na-predstojecim-izborima/" },
+];
+const ul = document.getElementById("media");
+for (const m of MEDIJI) {
+  const li = document.createElement("li");
+  const s = document.createElement("span"); s.className = "src"; s.textContent = m.src;
+  const a = document.createElement("a"); a.href = m.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = m.naslov;
+  const d = document.createElement("span"); d.className = "dom"; d.textContent = new URL(m.url).hostname.replace(/^www\./, "");
+  li.append(s, a, d); ul.appendChild(li);
+}
+document.getElementById("copy-mail").addEventListener("click", async (e) => {
+  const b = e.currentTarget; let ok = false;
+  try { await navigator.clipboard.writeText("info@srbsuae.com"); ok = true; }
+  catch (_) { const t = document.createElement("textarea"); t.value = "info@srbsuae.com"; document.body.appendChild(t); t.select(); try { ok = document.execCommand("copy"); } catch (_) {} t.remove(); }
+  b.textContent = ok ? "Adresa je kopirana" : "Označi adresu iznad";
+});
+document.getElementById("copy-links").addEventListener("click", async () => {
+  const txt = MEDIJI.map((m) => `${m.src}: ${m.url}`).join("\n");
+  let ok = false;
+  try { await navigator.clipboard.writeText(txt); ok = true; }
+  catch (_) { const t = document.createElement("textarea"); t.value = txt; document.body.appendChild(t); t.select(); try { ok = document.execCommand("copy"); } catch (_) {} t.remove(); }
+  document.getElementById("toast").textContent = ok ? "Linkovi su kopirani. Nalepi ih u poruku." : "Kopiranje nije uspelo. Otvori tekstove i kopiraj linkove ručno.";
+});
+</script>
+
+</body>
+</html>

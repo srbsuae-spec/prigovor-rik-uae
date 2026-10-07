@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prigovor RIK-u za UAE</title>
+<meta name="description" content="Generiši i pošalji RIK-u prigovor zbog toga što u Ujedinjenim Arapskim Emiratima nije određeno biračko mesto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap">
+<style>
+/* Jedna kolona kao formular na šalteru: numerisani koraci odozgo nadole, pismo kao list papira, slanje na kraju. */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --paper:#fdfdfb; --ink:#152033; --muted:#566173; --line:#d6dce5;
+  --navy:#1c3361; --navy-ink:#ffffff; --red:#a3302b; --ok:#2b6a4c; --warn-bg:#fbf1df; --warn-ink:#6d4a0f; --hl:#e7ecf5; --red-bg:#fbeceb;
+  --f-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --card:#171e29; --paper:#1b2330; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --ok:#7cc4a0; --warn-bg:#2f2614; --warn-ink:#f0cf8f; --hl:#24304a; --red-bg:#331b1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --card:#171e29; --paper:#1b2330; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --ok:#7cc4a0; --warn-bg:#2f2614; --warn-ink:#f0cf8f; --hl:#24304a; --red-bg:#331b1a; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--f-body);margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:flex;flex-direction:column;gap:16px}
+h1,h2{font-family:var(--f-display);color:var(--navy);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:700}
+h2{font-size:21px;line-height:1.25;font-weight:700;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--red)}
+p{margin:0}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--red)}
+header{display:flex;flex-direction:column;gap:10px;padding-block:4px 6px}
+.lead{font-size:17px;color:var(--muted);max-width:62ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.note{font-size:14.5px;color:var(--muted)}
+.priv{border-left:3px solid var(--navy);padding:10px 14px;background:var(--card);border-radius:0 8px 8px 0;font-size:14.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 16px}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.f.full{grid-column:1/-1}
+label.l{font-weight:600;font-size:15px}
+.hint{font-weight:400;color:var(--muted);font-size:13.5px}
+input[type=text],input[type=email],select,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink)}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+input.bad{border-color:var(--red)}
+.err{color:var(--red);font-size:13.5px;min-height:0}
+.err:empty{display:none}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+legend{font-weight:600;font-size:15px;padding:0;margin-bottom:4px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:7px;padding:9px 14px;cursor:pointer;background:var(--card)}
+.seg label:has(input:checked){border-color:var(--navy);background:var(--hl);font-weight:600}
+.chk{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.chk input{margin-top:4px;flex:0 0 auto;width:17px;height:17px;accent-color:var(--navy)}
+.chk .em{display:block;font-family:var(--f-mono);font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+.sub{padding-left:27px}
+.cclist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px 18px}
+.letter-head{display:flex;flex-direction:column;gap:6px}
+.letter{font-family:var(--f-display);font-size:16px;line-height:1.55;background:var(--paper);min-height:560px;padding:18px 20px;resize:vertical}
+.edited{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--warn-bg);color:var(--warn-ink);border-radius:7px;padding:10px 12px;font-size:14.5px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:600;font-size:15px;padding:11px 16px;border-radius:7px;border:1px solid var(--navy);background:var(--navy);color:var(--navy-ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.sec{background:transparent;color:var(--navy)}
+.btn.small{padding:7px 12px;font-size:14px}
+.prov{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px}
+.attach{background:var(--red-bg);color:var(--ink);border:1px solid var(--red);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.attach b{font-size:15.5px;color:var(--red)}
+.attach ol{margin:0;padding-left:22px}
+.missing{color:var(--red);font-weight:600;font-size:14.5px}
+.missing:empty{display:none}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:8px}
+.row:first-child{border-top:0;padding-top:0}
+.row .k{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.row .v{font-family:var(--f-mono);font-size:13px;overflow-wrap:anywhere;min-width:0;max-height:5.2em;overflow:hidden}
+@media (max-width:520px){.row{grid-template-columns:1fr auto}.row .k{grid-column:1/-1}}
+.sub-card{border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.sub-card h3{margin:0;font-size:17px;color:var(--navy)}
+.em-in{display:block;font-family:var(--f-mono);font-size:12.5px;overflow-wrap:anywhere}
+details.pv summary{cursor:pointer;font-size:14.5px;color:var(--navy);font-weight:600}
+details.pv pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:10px 12px;margin:8px 0 0;overflow-wrap:anywhere}
+.toast{color:var(--ok);font-weight:600;font-size:14.5px;min-height:1.4em}
+ol.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .15s,color .15s}}
+.btn.sec:hover{background:var(--hl)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Hitno · prigovor u zakonskom roku</span>
+  <h1>Prigovor RIK-u: biračko mesto u Ujedinjenim Arapskim Emiratima</h1>
+  <p class="lead">Republička izborna komisija nije odredila nijedno biračko mesto u UAE za izbore 25. oktobra 2026, iako se prijavilo više od 500 birača. Popuni podatke, pregledaj prigovor i pošalji ga sa svoje mejl adrese.</p>
+</header>
+
+<div class="attach" id="attach-top">
+  <b>Pre početka pripremi priloge.</b>
+  <span>Prigovor se šalje sa prilozima, a dodaješ ih ručno u mejlu. Pripremi:</span>
+  <ol>
+    <li>kopiju važećeg pasoša ili lične karte;</li>
+    <li>e-mail kojim si poslao/la zahtev za glasanje u inostranstvu (snimak ekrana);</li>
+    <li>e-mail obaveštenje Ambasade o uspešnoj prijavi, ako si ga dobio/la (snimak ekrana).</li>
+  </ol>
+</div>
+
+<p class="priv"><b>Tvoji podaci ostaju kod tebe.</b> Ova stranica ništa ne šalje i ne čuva. Prigovor šalješ ti, iz svog mejla. Prigovor sa JMBG-om, adresom i dokumentima ide <b>samo RIK-u</b>, preko zvaničnih adresa.</p>
+
+<section class="card" aria-labelledby="h1s">
+  <h2 id="h1s"><span class="n">1</span>Podnosilac prigovora</h2>
+  <div class="grid">
+    <div class="f"><label class="l" for="ime">Ime i prezime</label><input type="text" id="ime" autocomplete="name" placeholder="npr. Jovana Petrović"></div>
+    <div class="f"><label class="l" for="jmbg">JMBG</label><input type="text" id="jmbg" inputmode="numeric" maxlength="13" autocomplete="off" placeholder="13 cifara"><span class="err" id="jmbg-err"></span></div>
+    <div class="f full"><label class="l" for="adresa">Adresa prebivališta u Srbiji <span class="hint">(ulica i broj, poštanski broj, mesto, opština)</span></label><input type="text" id="adresa" autocomplete="off" placeholder="npr. Njegoševa 12, 11000 Beograd, Vračar"></div>
+    <div class="f"><label class="l" for="email">E-mail <span class="hint">(na njega RIK šalje odluku)</span></label><input type="email" id="email" autocomplete="email" placeholder="ime@primer.com"><span class="err" id="email-err"></span></div>
+    <div class="f"><label class="l" for="rod">Rod <span class="hint">(za oblike u tekstu)</span></label>
+      <select id="rod"><option value="m">muški: podneo, dobio</option><option value="z">ženski: podnela, dobila</option></select></div>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="h2s">
+  <h2 id="h2s"><span class="n">2</span>Prijava i boravište u UAE</h2>
+  <fieldset>
+    <legend>Prijavio/la sam se za glasanje u</legend>
+    <div class="seg">
+      <label><input type="radio" name="prijava" value="ad"> Abu Dabiju</label>
+      <label><input type="radio" name="prijava" value="db"> Dubaiju</label>
+    </div>
+  </fieldset>
+  <div class="grid">
+    <div class="f"><label class="l" for="emirat">Gde trenutno živiš</label>
+      <select id="emirat">
+        <option value="">izaberi</option>
+        <option value="Dubai|Dubaija">Dubai</option>
+        <option value="Abu Dabi|Abu Dabija">Abu Dabi</option>
+        <option value="Sardza|Sardze">Šardža</option>
+        <option value="Ajman|Ajmana">Ajman</option>
+        <option value="Ras al Kajma|Ras al Kajme">Ras al Kajma</option>
+        <option value="Fudzejra|Fudzejre">Fudžejra</option>
+        <option value="Um al Kuvejn|Um al Kuvejna">Um al Kuvejn</option>
+        <option value="drugo">drugo mesto</option>
+      </select></div>
+    <div class="f" id="drugo-f" hidden><label class="l" for="drugo">Ime mesta</label><input type="text" id="drugo" placeholder="npr. Al Ain"></div>
+    <div class="f"><label class="l" for="broj">Broj prijavljenih u UAE <span class="hint">(menjaj samo ako znaš tačniji)</span></label><input type="text" id="broj" value="vise od 500"></div>
+  </div>
+  <label class="chk"><input type="checkbox" id="obav" checked><span>Dobio/la sam e-mail obaveštenje Ambasade u Abu Dabiju o uspešnoj prijavi, da je lokalna samouprava upisala podatak u Jedinstveni birački spisak<span class="hint" style="display:block">Tekst tada citira obaveštenje, a ono se navodi i kao prilog.</span></span></label>
+  <label class="chk sub" id="pre-l"><input type="checkbox" id="pre"><span>Obaveštenje sam dobio/la pre nego što je RIK doneo odluku</span></label>
+  <fieldset>
+    <legend>Šta prilažeš <span class="hint">(prilog dodaješ ručno u mejlu)</span></legend>
+    <label class="chk"><input type="checkbox" id="p-dok" checked><span>Kopija važećeg ličnog dokumenta (pasoš ili lična karta)</span></label>
+    <label class="chk"><input type="checkbox" id="p-zah" checked><span>Dokaz o blagovremeno podnetom zahtevu: poslat e-mail sa zahtevom za glasanje u inostranstvu</span></label>
+  </fieldset>
+</section>
+
+<section class="card" aria-labelledby="h3s">
+  <h2 id="h3s"><span class="n">3</span>Primaoci</h2>
+  <p class="note">Prigovor sa tvojim ličnim podacima ide samo Republičkoj izbornoj komisiji. <b>Prima:</b> <span style="font-family:var(--f-mono);font-size:14px">rik@parlament.rs</span>, a kopija (CC) ide na drugu zvaničnu adresu RIK-a.</p>
+  <div class="cclist" id="cclist"></div>
+  <div class="attach">
+    <b>Lične podatke ne šalji nikome osim RIK-u.</b>
+    <span>JMBG, adresu, pasoš i druga dokumenta ne šalji organizacijama (CeSID, CRTA, CEPRIS), organizatorima akcije, u grupe ni preko društvenih mreža. Za njih je korak 6, bez ličnih podataka.</span>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="h4s">
+  <h2 id="h4s"><span class="n">4</span>Pregledaj prigovor</h2>
+  <p class="note">Tekst je bez slova č, ć, š, ž i đ, da ga nijedan mejl program ne bi pokvario. Možeš da ga izmeniš; ako upišeš ta slova, pri slanju se pretvaraju u c, s, z, dj. <button type="button" class="btn sec small" id="druga">Druga verzija uvoda</button></p>
+  <div class="letter-head">
+    <label class="l" for="predmet">Predmet</label><input type="text" id="predmet">
+  </div>
+  <div class="edited" id="edited" hidden>Ručno si menjao/la tekst, pa se više ne menja sam kad promeniš podatke. <button type="button" class="btn sec small" id="regen">Ponovo napravi tekst iz podataka</button></div>
+  <label class="l" for="tekst">Tekst</label>
+  <textarea id="tekst" class="letter" spellcheck="false"></textarea>
+</section>
+
+<section class="card" aria-labelledby="h5s">
+  <h2 id="h5s"><span class="n">5</span>Pošalji sa svoje adrese</h2>
+  <p class="missing" id="missing" role="status"></p>
+  <p class="note">Izaberi gde imaš mejl. Otvoriće se nov mejl sa popunjenim primaocima, predmetom i tekstom.</p>
+  <div class="prov" id="prov">
+    <a class="btn send" id="s-gmail" target="_blank" rel="noopener">Gmail</a>
+    <a class="btn send" id="s-outlook" target="_blank" rel="noopener">Outlook / Hotmail</a>
+    <a class="btn send" id="s-o365" target="_blank" rel="noopener">Outlook (posao, škola)</a>
+    <a class="btn send" id="s-yahoo" target="_blank" rel="noopener">Yahoo Mail</a>
+    <a class="btn sec send" id="s-mailto">Mejl aplikacija</a>
+  </div>
+  <p class="note" id="mob-savet" hidden></p>
+  <p class="missing" id="nije-otvoreno" role="status"></p>
+  <div class="attach" id="attach">
+    <b>Pre slanja priloži dokumente.</b>
+    <span>Nijedno dugme ne može samo da doda priloge. U otvorenom mejlu klikni spajalicu i dodaj:</span>
+    <ol id="attach-ls"></ol>
+  </div>
+  <p class="note">Ako dugme ne otvori mejl (iCloud, GMX, poslovni ili drugi mejl, ili neka aplikacija), napravi nov mejl ručno i kopiraj polje po polje:</p>
+  <div class="rows">
+    <div class="row"><span class="k">Svi primaoci</span><span class="v">Prima i CC zajedno, za jedno polje „Prima“</span><button type="button" class="btn sec small" data-copy="svi">Kopiraj</button></div>
+    <div class="row"><span class="k">Prima</span><span class="v" id="v-to"></span><button type="button" class="btn sec small" data-copy="to">Kopiraj</button></div>
+    <div class="row"><span class="k">CC</span><span class="v" id="v-cc"></span><button type="button" class="btn sec small" data-copy="cc">Kopiraj</button></div>
+    <div class="row"><span class="k">Predmet</span><span class="v" id="v-su"></span><button type="button" class="btn sec small" data-copy="su">Kopiraj</button></div>
+    <div class="row"><span class="k">Tekst</span><span class="v" id="v-body"></span><button type="button" class="btn sec small" data-copy="body">Kopiraj</button></div>
+  </div>
+  <p class="toast" id="toast" role="status"></p>
+</section>
+
+<section class="card" aria-labelledby="h6s">
+  <h2 id="h6s"><span class="n">6</span>Javi da si poslao/la, bez ličnih podataka</h2>
+  <p class="note">Dva kratka mejla koja ne sadrže ime, JMBG, adresu ni dokumenta. Oba su neobavezna, a prigovor RIK-u važi i bez njih.</p>
+
+  <div class="sub-card">
+    <h3>Organizatorima akcije, za brojanje</h3>
+    <p class="note">Studenti u blokadi, dijaspora broje koliko je prigovora poslato i iz kojih mesta. <span class="em-in">studentiublokadidijaspora@gmail.com</span></p>
+    <div class="prov" id="g-org"></div>
+    <details class="pv"><summary>Pogledaj tekst</summary><pre id="pv-org"></pre></details>
+  </div>
+
+  <div class="sub-card">
+    <h3>Organizacijama za praćenje izbora</h3>
+    <p class="note">CeSID, CRTA i CEPRIS prate ostvarivanje biračkog prava u inostranstvu. Mejl opisuje problem: šta se desilo, gde i kada. CeSID je javno zamolio da im se ne šalju lični podaci i dokumenta.</p>
+    <div class="cclist" id="obs-list"></div>
+    <div class="prov" id="g-obs"></div>
+    <details class="pv"><summary>Pogledaj tekst</summary><pre id="pv-obs"></pre></details>
+  </div>
+  <p class="toast" id="toast2" role="status"></p>
+</section>
+
+<section class="card" aria-labelledby="h7s">
+  <h2 id="h7s">Posle slanja</h2>
+  <ol class="steps">
+    <li>Proveri u poslatim porukama da je prigovor otišao sa prilozima.</li>
+    <li>Sačuvaj poslat mejl i svaki odgovor RIK-a ili Ambasade, sa datumom.</li>
+    <li>Pošalji ovaj link svima iz UAE koji su se prijavili za glasanje. Svaki prigovor se računa posebno.</li>
+  </ol>
+</section>
+
+<footer>
+  <p>Tekst prigovora je napravljen po prigovoru koji je birač iz Dubaija poslao RIK-u 5. 10. 2026.</p>
+  <p>Stranica ne koristi kolačiće, analitiku ni server. Sve što upišeš nestaje kad je zatvoriš.</p>
+</footer>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const TO = ["rik@parlament.rs"];
+const ORG = "studentiublokadidijaspora@gmail.com";
+// Prigovor sa ličnim podacima ide samo zvaničnim adresama RIK-a.
+const CC = [
+  { id: "c-izbori", naziv: "RIK, izborna adresa Narodne skupštine", email: ["izbori@parlament.rs"], gde: "cclist" },
+];
+// Organizacije dobijaju samo opis problema, bez ličnih podataka (CeSID je to javno zatražio).
+const OBS = [
+  { id: "o-cesid", naziv: "CeSID", email: ["cesid@cesid.rs", "bojan.klacar@cesid.rs"] },
+  { id: "o-crta", naziv: "CRTA", email: ["prijavi@crta.rs"] },
+  { id: "o-cepris", naziv: "CEPRIS", email: ["sofija.mandic@cepris.org"] },
+];
+
+// ---------- ASCII: bez č, ć, š, ž, đ i ćirilice ----------
+const CYR = "абвгдђежзијклљмнњопрстћуфхцчџш";
+const LAT = ["a","b","v","g","d","dj","e","z","z","i","j","k","l","lj","m","n","nj","o","p","r","s","t","c","u","f","h","c","c","dz","s"];
+function ascii(s) {
+  let r = "";
+  for (const ch of String(s || "")) {
+    const lo = ch.toLowerCase(), i = CYR.indexOf(lo);
+    if (i >= 0) { const t = LAT[i]; r += ch === lo ? t : t.charAt(0).toUpperCase() + t.slice(1); }
+    else r += ch;
+  }
+  return r.replace(/đ/g, "dj").replace(/Đ/g, "Dj").replace(/ß/g, "ss")
+    .replace(/[„“”«»″]/g, '"').replace(/[‘’‚′]/g, "'").replace(/[–—]/g, "-").replace(/…/g, "...").replace(/ /g, " ")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\x00-\x7F]/g, "");
+}
+
+// ---------- JMBG ----------
+function jmbgOk(j) {
+  if (!/^\d{13}$/.test(j)) return false;
+  const d = j.split("").map(Number);
+  let m = 11 - ((7 * (d[0] + d[6]) + 6 * (d[1] + d[7]) + 5 * (d[2] + d[8]) + 4 * (d[3] + d[9]) + 3 * (d[4] + d[10]) + 2 * (d[5] + d[11])) % 11);
+  if (m > 9) m = 0;
+  return m === d[12];
+}
+let rodDirnut = false;
+
+// ---------- datum ----------
+const MES = ["januara","februara","marta","aprila","maja","juna","jula","avgusta","septembra","oktobra","novembra","decembra"];
+const danas = () => { const d = new Date(); return `${d.getDate()}. ${MES[d.getMonth()]} ${d.getFullYear()}. godine`; };
+
+// ---------- tekst ----------
+const UVODI = [
+  "Ovim putem blagovremeno podnosim prigovor protiv Odluke",
+  "U zakonskom roku podnosim prigovor protiv Odluke",
+  "Blagovremeno podnosim prigovor na Odluku",
+];
+let uvod = Math.floor(Math.random() * UVODI.length);
+const SUBJECT = "Hitno: Prigovor protiv Odluke o odredjivanju birackih mesta u inostranstvu - Usled uskracivanja birackog prava";
+
+function podaci() {
+  const em = $("emirat").value;
+  let bor = "", borGen = "";
+  if (em === "drugo") { bor = borGen = $("drugo").value.trim(); }
+  else if (em) [bor, borGen] = em.split("|");
+  const pr = document.querySelector("input[name=prijava]:checked");
+  return {
+    ime: $("ime").value.trim(), jmbg: $("jmbg").value.trim(), adresa: $("adresa").value.trim(), email: $("email").value.trim(),
+    z: $("rod").value === "z", bor, borGen, prijava: pr ? pr.value : "",
+    broj: $("broj").value.trim() || "vise od 500", obav: $("obav").checked, pre: $("obav").checked && $("pre").checked,
+    pDok: $("p-dok").checked, pZah: $("p-zah").checked,
+  };
+}
+const ph = (v, label) => v ? ascii(v) : `[${label}]`;
+
+function prilozi(p) {
+  const a = [];
+  if (p.pDok) a.push("kopiju vazeceg licnog dokumenta");
+  if (p.pZah) a.push("dokaz o blagovremeno podnetom zahtevu (poslat e-mail sa zahtevom)");
+  if (p.obav) a.push("e-mail obavestenje Ambasade Republike Srbije u Abu Dabiju o uspesnoj prijavi, kojim je potvrdjeno da je podatak o iskazanom interesovanju upisan u Jedinstveni biracki spisak");
+  return a;
+}
+
+function napravi(p) {
+  const g = (m, z) => (p.z ? z : m);
+  const u = p.prijava === "ad" ? "u Abu Dabiju" : p.prijava === "db" ? "u Dubaiju" : "[u Abu Dabiju / u Dubaiju]";
+  const tacka5 = p.prijava === "db"
+    ? "u Dubaiju, ili, ukoliko to nije moguce, u Ambasadi Republike Srbije u Abu Dabiju"
+    : "u Ambasadi Republike Srbije u Abu Dabiju";
+  const L = [];
+  L.push("Postovani,", "");
+  L.push(`${UVODI[uvod]} Republicke izborne komisije o odredjivanju birackih mesta u inostranstvu za glasanje na vanrednim izborima za narodne poslanike Narodne skupstine, raspisanim za 25. oktobar 2026. godine, u delu u kojem nije odredjeno biracko mesto na teritoriji Ujedinjenih Arapskih Emirata.`, "");
+  L.push(`Podnosilac prigovora: ${ph(p.ime, "Ime i prezime")}`);
+  L.push(`JMBG: ${ph(p.jmbg, "JMBG")}`);
+  L.push(`Adresa prebivalista u Republici Srbiji: ${ph(p.adresa, "adresa prebivalista")}`);
+  L.push(`Trenutno boraviste: ${ph(p.bor, "mesto")}, UAE`);
+  L.push(`E-mail: ${ph(p.email, "e-mail")}`, "");
+  L.push("Obrazlozenje:", "");
+  L.push(`Kao ${g("drzavljanin", "drzavljanka")} Republike Srbije i birac, blagovremeno sam ${g("podneo", "podnela")} zahtev za upis podatka u Jedinstveni biracki spisak da cu na predstojecim izborima glasati u inostranstvu, na teritoriji Ujedinjenih Arapskih Emirata, ${u}.`);
+  if (p.obav) {
+    L.push(p.pre
+      ? `Posebno isticem da sam pre donosenja osporene odluke Republicke izborne komisije od Ambasade Republike Srbije u Abu Dabiju ${g("dobio", "dobila")} zvanicno obavestenje sledece sadrzine:`
+      : `Posebno isticem da sam od Ambasade Republike Srbije u Abu Dabiju ${g("dobio", "dobila")} zvanicno obavestenje sledece sadrzine:`, "");
+    L.push('"Obavestavamo Vas da je nadlezna lokalna samouprava upisala podatak u Jedinstveni biracki spisak (JBS) da ste iskazali interesovanje da na predstojecim izborima glasate u inostranstvu.');
+    L.push('Nakon donosenja odluke Republicke izborne komisije o ispunjenosti uslova za glasanje po mestu boravista u inostranstvu, posredstvom zvanicnog sajta Ambasade obavesticemo Vas o sledecim koracima."', "");
+    L.push(p.pre
+      ? "Navedeno obavestenje potvrdjuje da je moj podatak o iskazanom interesovanju za glasanje u inostranstvu bio upisan u Jedinstveni biracki spisak pre donosenja osporene odluke."
+      : "Navedeno obavestenje potvrdjuje da je moj podatak o iskazanom interesovanju za glasanje u inostranstvu upisan u Jedinstveni biracki spisak.");
+  }
+  L.push(`Prema podacima kojima raspolazemo, ${ascii(p.broj)} biraca blagovremeno je iskazalo interesovanje za glasanje na teritoriji Ujedinjenih Arapskih Emirata.`, "");
+  L.push("Clanom 52. Ustava Republike Srbije garantovano je biracko pravo, dok Zakon o izboru narodnih poslanika propisuje kriterijume za odredjivanje birackih mesta u inostranstvu, ukljucujuci kriterijum od najmanje 100 biraca.");
+  L.push("Uprkos tome, u osporenoj odluci nije odredjeno nijedno biracko mesto na teritoriji Ujedinjenih Arapskih Emirata.", "");
+  L.push("Posebno je sporno sto iz odluke nije jasno na osnovu kojih cinjenica i kriterijuma je utvrdjeno da u UAE nisu ispunjeni uslovi za odredjivanje birackog mesta, imajuci u vidu da je broj biraca koji su blagovremeno iskazali interesovanje visestruko veci od zakonom propisanog broja od 100 biraca.", "");
+  L.push("Ukoliko RIK smatra da, uprkos broju blagovremeno prijavljenih biraca, nisu ispunjeni uslovi za odredjivanje birackog mesta u UAE, zahtevam da u odluci, odnosno u odgovoru na ovaj prigovor, konkretno navede cinjenicni i pravni osnov za takav zakljucak, kao i podatke na osnovu kojih je utvrdjeno da uslovi nisu ispunjeni.");
+  L.push("Posebno zahtevam da se navede broj biraca u UAE koji je RIK uzela u obzir prilikom donosenja osporene odluke, kao i kriterijum na osnovu kojeg je, uprkos tom broju, odluceno da se biracko mesto u UAE ne odredi.", "");
+  L.push("Takodje zahtevam da se navede na osnovu kog predloga Ministarstva nadleznog za spoljne poslove i kojih podataka je Republicka izborna komisija odlucila da ne odredi biracko mesto na teritoriji Ujedinjenih Arapskih Emirata.");
+  L.push("Imajuci u vidu navedene cinjenice, kao i broj biraca koji su blagovremeno iskazali interesovanje za glasanje u UAE, smatram da postoji osnov za preispitivanje osporene odluke u delu koji se odnosi na Ujedinjene Arapske Emirate.", "");
+  L.push("Predlog");
+  L.push("Predlazem da Republicka izborna komisija:");
+  L.push("1. usvoji ovaj prigovor;");
+  L.push("2. preispita Odluku o odredjivanju birackih mesta u inostranstvu u delu koji se odnosi na Ujedinjene Arapske Emirate;");
+  L.push("3. utvrdi broj biraca ciji je podatak o iskazanom interesovanju za glasanje u UAE blagovremeno evidentiran u Jedinstvenom birackom spisku;");
+  L.push("4. utvrdi na osnovu kojih cinjenica i pravnih kriterijuma biracko mesto u UAE nije odredjeno;");
+  L.push(`5. izmeni osporenu odluku i odredi biracko mesto na teritoriji Ujedinjenih Arapskih Emirata, ${tacka5}.`, "");
+  const a = prilozi(p);
+  if (a.length) {
+    L.push("U prilogu dostavljam:");
+    a.forEach((x, i) => L.push(`${i + 1}. ${x}${i === a.length - 1 ? "." : ";"}`));
+  }
+  L.push("Molim da mi odluku po ovom prigovoru dostavite elektronskim putem na navedenu adresu.", "");
+  L.push(`Iz UAE, ${ph(p.borGen, "mesto")}, ${danas()}`);
+  L.push(ph(p.ime, "Ime i prezime"));
+  return L.join("\n");
+}
+
+// ---------- CC lista ----------
+function lista(stavke, gde) {
+  stavke.forEach((c) => {
+    const l = document.createElement("label");
+    l.className = "chk";
+    l.innerHTML = `<input type="checkbox" id="${c.id}"${c.on === false ? "" : " checked"}><span>${c.naziv}<span class="em">${c.email.join(", ")}</span></span>`;
+    $(gde || c.gde).appendChild(l);
+  });
+}
+lista(CC);
+lista(OBS, "obs-list");
+const ccAdrese = () => CC.filter((c) => $(c.id).checked).flatMap((c) => c.email);
+
+// ---------- stanje ----------
+let rucno = false, poslednji = "";
+function telo() { return ascii($("tekst").value).replace(/\r\n/g, "\n"); }
+function predmet() { return ascii($("predmet").value); }
+
+function nedostaje(p) {
+  const m = [];
+  if (!p.ime) m.push("ime i prezime");
+  if (!jmbgOk(p.jmbg)) m.push("ispravan JMBG");
+  if (!p.adresa) m.push("adresu prebivališta");
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email)) m.push("e-mail");
+  if (!p.prijava) m.push("gde si se prijavio/la (Abu Dabi ili Dubai)");
+  if (!p.bor) m.push("gde živiš");
+  return m;
+}
+
+function osvezi() {
+  const p = podaci();
+  $("drugo-f").hidden = $("emirat").value !== "drugo";
+  $("pre-l").hidden = !$("obav").checked;
+  if (!rodDirnut && jmbgOk(p.jmbg)) $("rod").value = Number(p.jmbg.slice(9, 12)) < 500 ? "m" : "z";
+
+  const novi = napravi(p);
+  if (!rucno) { $("tekst").value = novi; poslednji = novi; }
+  $("edited").hidden = !rucno;
+
+  // prilozi za ručno dodavanje
+  const ls = $("attach-ls"); ls.innerHTML = "";
+  const nazivi = [];
+  if (p.pDok) nazivi.push("kopiju pasoša ili lične karte");
+  if (p.pZah) nazivi.push("e-mail kojim si poslao/la zahtev za glasanje u inostranstvu (snimak ekrana)");
+  if (p.obav) nazivi.push("e-mail obaveštenje Ambasade o uspešnoj prijavi (snimak ekrana)");
+  nazivi.forEach((n) => { const li = document.createElement("li"); li.textContent = n; ls.appendChild(li); });
+  $("attach").hidden = !nazivi.length;
+
+  const m = nedostaje(p);
+  $("missing").textContent = m.length ? "Još nedostaje: " + m.join(", ") + "." : "";
+  linkovi();
+}
+
+// Uređaj: na telefonu https linkovi za Gmail i Outlook otvaraju pregledač, a mobilni Gmail u pregledaču
+// ne pravi nov mejl. Zato na telefonu otvaramo aplikacije: Android preko intent:, iOS preko njihovih šema.
+function platforma() {
+  const ua = navigator.userAgent || "";
+  const android = /Android/i.test(ua);
+  const ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1);
+  const inapp = /FBAN|FBAV|FB_IAB|FBIOS|Instagram|WhatsApp|Messenger|Viber|Telegram|; wv\)/i.test(ua) || (ios && !/Safari\//.test(ua));
+  return { android, ios, mob: android || ios, inapp };
+}
+const P = platforma();
+const URL_ = {};
+
+// Linkovi za nov mejl za dati uređaj: na računaru veb verzije, na Androidu intent:, na iPhone-u šeme aplikacija.
+function mejlLinkovi(TOa, cc, su, body) {
+  const q = encodeURIComponent;
+  const to = TOa.join(",");
+  const parametri = (sep, suKey) => `to=${q(TOa.join(sep))}${cc.length ? "&cc=" + q(cc.join(sep)) : ""}&${suKey}=${q(su)}&body=${q(body)}`;
+  const mailto = `mailto:${to}?${cc.length ? "cc=" + cc.join(",") + "&" : ""}subject=${q(su)}&body=${q(body.replace(/\n/g, "\r\n"))}`;
+  // Android intent: ceo mailto (adrese, predmet, tekst) plus extras; ako aplikacija ne postoji, otvara se veb verzija.
+  // Gmail na Androidu ne čita predmet i tekst iz extras, pa idu i u mailto deo (tekst je ASCII, nema problema sa kodiranjem)
+  const ad = mailto.slice(7);
+  const ex = (x) => q(x).replace(/;/g, "%3B");
+  const intent = (pkg, web) => `intent:${ad}#Intent;action=android.intent.action.SENDTO;scheme=mailto;package=${pkg};` +
+    `S.android.intent.extra.SUBJECT=${ex(su)};S.android.intent.extra.TEXT=${ex(body)};` + (web ? `S.browser_fallback_url=${q(web)};` : "") + "end";
+  const web = {
+    gmail: `https://mail.google.com/mail/?view=cm&fs=1&${parametri(",", "su")}`,
+    outlook: `https://outlook.live.com/mail/0/deeplink/compose?${parametri(";", "subject")}`,
+    o365: `https://outlook.office.com/mail/deeplink/compose?${parametri(";", "subject")}`,
+    yahoo: `https://compose.mail.yahoo.com/?${parametri(",", "subject")}`,
+  };
+  if (P.android) return {
+    gmail: intent("com.google.android.gm", web.gmail),
+    outlook: intent("com.microsoft.office.outlook", web.outlook),
+    o365: intent("com.microsoft.office.outlook", web.o365),
+    yahoo: intent("com.yahoo.mobile.client.android.mail", web.yahoo),
+    mailto,
+  };
+  if (P.ios) return {
+    gmail: `googlegmail:///co?${parametri(",", "subject")}`,
+    outlook: `ms-outlook://compose?${parametri(",", "subject")}`,
+    o365: `ms-outlook://compose?${parametri(",", "subject")}`,
+    yahoo: `ymail://mail/compose?${parametri(",", "subject")}`,
+    mailto,
+  };
+  return Object.assign({ mailto }, web);
+}
+
+function linkovi() {
+  const cc = ccAdrese(), su = predmet(), body = telo();
+  const u = mejlLinkovi(TO, cc, su, body);
+  for (const k of ["gmail", "outlook", "o365", "yahoo", "mailto"]) $("s-" + k).href = u[k];
+  $("v-to").textContent = TO.join(", ");
+  $("v-cc").textContent = cc.join(", ") || "(niko)";
+  $("v-su").textContent = su;
+  $("v-body").textContent = body.slice(0, 220) + "…";
+  obavestenja();
+}
+
+// ---------- korak 6: mejlovi bez ličnih podataka ----------
+const DUGMAD = [["gmail", "Gmail"], ["outlook", "Outlook / Hotmail"], ["o365", "Outlook (posao, škola)"], ["yahoo", "Yahoo Mail"], ["mailto", "Mejl aplikacija"]];
+["org", "obs"].forEach((g) => {
+  $("g-" + g).innerHTML = DUGMAD.map(([k, t]) => `<a class="btn sec send2" id="${g}-${k}" target="_blank" rel="noopener">${t}</a>`).join("") +
+    `<button type="button" class="btn sec small" data-copy2="${g}">Kopiraj adrese, predmet i tekst</button>`;
+});
+const OBV = {};
+function obavestenja() {
+  const p = podaci(), g = (m, z) => (p.z ? z : m);
+  const gde = p.prijava === "ad" ? "Abu Dabiju" : p.prijava === "db" ? "Dubaiju" : "[Abu Dabiju / Dubaiju]";
+  const zivim = ascii(p.bor) || "[mesto]";
+  const dat = danas().replace(" godine", "");
+  OBV.org = {
+    to: [ORG], su: "Poslat prigovor RIK-u - UAE",
+    body: [
+      "Zdravo,", "",
+      `${g("Poslao", "Poslala")} sam prigovor RIK-u zbog toga sto u UAE nije odredjeno biracko mesto.`, "",
+      `${g("Prijavljen", "Prijavljena")} za glasanje u: ${gde}`,
+      `Mesto u kom zivim: ${zivim}`,
+      `Datum slanja: ${dat}`, "",
+      "Ovaj mejl namerno ne sadrzi licne podatke.",
+    ].join("\n"),
+  };
+  const L = [
+    "Postovani,", "",
+    "obracam vam se povodom ostvarivanja birackog prava u inostranstvu.", "",
+    `Blagovremeno sam se ${g("prijavio", "prijavila")} za glasanje u inostranstvu, u Ujedinjenim Arapskim Emiratima, u ${gde}. Republicka izborna komisija u Odluci o odredjivanju birackih mesta u inostranstvu za izbore za narodne poslanike 25. oktobra 2026. nije odredila nijedno biracko mesto u UAE. Prema podacima kojima raspolazemo, interesovanje za glasanje u UAE blagovremeno je iskazalo ${ascii(p.broj)} biraca, sto je visestruko vise od zakonskog kriterijuma od 100 biraca.`,
+  ];
+  if (p.obav) L.push("", "Ambasada Republike Srbije u Abu Dabiju mi je potvrdila da je podatak o mom iskazanom interesovanju za glasanje u inostranstvu upisan u Jedinstveni biracki spisak.");
+  L.push("", `Dana ${dat} ${g("podneo", "podnela")} sam prigovor Republickoj izbornoj komisiji. Molim vas da ovaj slucaj uvrstite u vase pracenje izbora i izvestavanje o ostvarivanju birackog prava u inostranstvu.`,
+    "", "U skladu sa vasom preporukom, ne saljem licne podatke ni dokumenta.", "", "S postovanjem,", `Birac iz UAE (${zivim})`);
+  OBV.obs = { to: OBS.filter((o) => $(o.id).checked).flatMap((o) => o.email), su: "Uskracivanje birackog prava u UAE - nije odredjeno biracko mesto", body: L.join("\n") };
+  for (const k of ["org", "obs"]) {
+    const o = OBV[k], u = o.to.length ? mejlLinkovi(o.to, [], o.su, o.body) : null;
+    for (const [d] of DUGMAD) { const a = $(k + "-" + d); if (u) a.href = u[d]; else a.removeAttribute("href"); }
+    $("pv-" + k).textContent = `Prima: ${o.to.join(", ") || "(izaberi bar jednu organizaciju)"}\nPredmet: ${o.su}\n\n${o.body}`;
+  }
+}
+
+(function uredjaj() {
+  if (!P.mob) return;
+  // aplikacije se otvaraju u istom prozoru; nov prozor bi otvorio pregledač
+  document.querySelectorAll("a.send, a.send2").forEach((a) => { a.removeAttribute("target"); a.removeAttribute("rel"); });
+  for (const g of ["s", "org", "obs"]) {
+    $(g + "-gmail").textContent = "Gmail aplikacija";
+    $(g + "-outlook").textContent = "Outlook aplikacija";
+    $(g + "-o365").hidden = true; // Outlook aplikacija pokriva i poslovne naloge
+    $(g + "-yahoo").textContent = "Yahoo Mail aplikacija";
+    if (P.ios) {
+      // na iPhone-u je ugrađena Mail aplikacija najpouzdanija, pa ide prva
+      const m = $(g + "-mailto");
+      m.parentNode.insertBefore(m, $(g + "-gmail"));
+      if (g === "s") m.classList.remove("sec");
+      m.textContent = "Mail aplikacija (iPhone)";
+    }
+  }
+  $("mob-savet").hidden = false;
+  $("mob-savet").textContent = P.inapp
+    ? "Stranica je otvorena unutar druge aplikacije (WhatsApp, Instagram, Viber…), gde dugmad za mejl često ne rade. Otvori je u Chrome-u ili Safariju (⋮ ili ⋯ → Otvori u pregledaču)."
+    : "Na telefonu dugme otvara aplikaciju za mejl, ako je instalirana. Ako se ništa ne desi, probaj drugo dugme ili kopiraj polja ispod.";
+})();
+
+// ---------- događaji ----------
+["ime", "adresa", "email", "broj", "drugo"].forEach((id) => $(id).addEventListener("input", osvezi));
+$("jmbg").addEventListener("input", () => {
+  const el = $("jmbg"); el.value = el.value.replace(/\D/g, "").slice(0, 13);
+  const v = el.value, bad = v.length === 13 && !jmbgOk(v);
+  el.classList.toggle("bad", bad);
+  $("jmbg-err").textContent = bad ? "JMBG nije ispravan. Proveri cifre." : "";
+  osvezi();
+});
+$("email").addEventListener("blur", () => {
+  const v = $("email").value.trim(), bad = v && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+  $("email").classList.toggle("bad", !!bad);
+  $("email-err").textContent = bad ? "Proveri e-mail adresu." : "";
+});
+$("rod").addEventListener("change", () => { rodDirnut = true; osvezi(); });
+["emirat", "obav", "pre", "p-dok", "p-zah"].forEach((id) => $(id).addEventListener("change", osvezi));
+document.querySelectorAll("input[name=prijava]").forEach((r) => r.addEventListener("change", osvezi));
+$("cclist").addEventListener("change", linkovi);
+$("obs-list").addEventListener("change", obavestenja);
+$("predmet").addEventListener("input", linkovi);
+$("tekst").addEventListener("input", () => { rucno = $("tekst").value !== poslednji; $("edited").hidden = !rucno; linkovi(); });
+$("regen").addEventListener("click", () => { rucno = false; osvezi(); });
+$("druga").addEventListener("click", () => {
+  uvod = (uvod + 1) % UVODI.length;
+  if (rucno) { rucno = false; }
+  osvezi();
+});
+
+document.querySelectorAll("a.send").forEach((a) => a.addEventListener("click", (e) => {
+  const m = nedostaje(podaci());
+  if (m.length) {
+    e.preventDefault();
+    $("missing").textContent = "Pre slanja popuni: " + m.join(", ") + ".";
+    $("missing").scrollIntoView({ block: "center", behavior: "smooth" });
+    return;
+  }
+  $("toast").textContent = "Ako se otvorio nov mejl, dodaj priloge pa ga pošalji. Ako se ništa nije otvorilo, kopiraj polja ispod.";
+  $("nije-otvoreno").textContent = "";
+  if (P.mob) {
+    // ako se aplikacija otvorila, stranica odlazi u pozadinu; ako je i dalje vidljiva posle 2,5 s, ništa se nije otvorilo
+    let otislo = false;
+    const vis = () => { if (document.hidden) otislo = true; };
+    document.addEventListener("visibilitychange", vis);
+    window.addEventListener("pagehide", vis);
+    setTimeout(() => {
+      document.removeEventListener("visibilitychange", vis);
+      if (!otislo && !document.hidden) $("nije-otvoreno").textContent = "Izgleda da se aplikacija nije otvorila. Probaj drugo dugme ili kopiraj polja ispod (prvo „Svi primaoci“, pa predmet i tekst).";
+    }, 2500);
+  }
+}));
+
+async function kopiraj(txt) {
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch (_) {
+    const t = document.createElement("textarea"); t.value = txt; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch (_) {}
+    t.remove(); return ok;
+  }
+}
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+  const k = b.dataset.copy;
+  const v = { svi: TO.concat(ccAdrese()).join(", "), to: TO.join(", "), cc: ccAdrese().join(", "), su: predmet(), body: telo() }[k];
+  const ok = await kopiraj(v);
+  const poruke = { svi: "Sve adrese su kopirane.", to: "Primalac je kopiran.", cc: "CC adrese su kopirane.", su: "Predmet je kopiran.", body: "Tekst je kopiran." };
+  $("toast").textContent = ok ? poruke[k] + " Nalepi u mejl." : "Kopiranje nije uspelo. Označi tekst u koraku 4 i kopiraj ga ručno.";
+}));
+
+document.querySelectorAll("[data-copy2]").forEach((b) => b.addEventListener("click", async () => {
+  const o = OBV[b.dataset.copy2];
+  const ok = await kopiraj(`Prima: ${o.to.join(", ")}\nPredmet: ${o.su}\n\n${o.body}`);
+  $("toast2").textContent = ok ? "Kopirano. Nalepi u nov mejl i rasporedi adresu, predmet i tekst." : "Kopiranje nije uspelo. Otvori „Pogledaj tekst“ i kopiraj ručno.";
+}));
+document.querySelectorAll("a.send2").forEach((a) => a.addEventListener("click", (e) => {
+  if (!a.getAttribute("href")) { e.preventDefault(); $("toast2").textContent = "Izaberi bar jednu organizaciju."; return; }
+  $("toast2").textContent = "Ako se otvorio nov mejl, pošalji ga. Ako nije, koristi dugme za kopiranje.";
+}));
+
+$("predmet").value = SUBJECT;
+osvezi();
+</script>
+
+</body>
+</html>

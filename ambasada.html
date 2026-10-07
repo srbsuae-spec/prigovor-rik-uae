@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pitanje Ambasadi u Abu Dabiju</title>
+<meta name="description" content="Pošalji Ambasadi Republike Srbije u Abu Dabiju pitanje zašto u UAE nije otvoreno biračko mesto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap">
+<style>
+/* Jedna kolona kao formular na šalteru: numerisani koraci odozgo nadole, pismo kao list papira, slanje na kraju. */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --paper:#fdfdfb; --ink:#152033; --muted:#566173; --line:#d6dce5;
+  --navy:#1c3361; --navy-ink:#ffffff; --red:#a3302b; --ok:#2b6a4c; --warn-bg:#fbf1df; --warn-ink:#6d4a0f; --hl:#e7ecf5; --red-bg:#fbeceb;
+  --f-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --card:#171e29; --paper:#1b2330; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --ok:#7cc4a0; --warn-bg:#2f2614; --warn-ink:#f0cf8f; --hl:#24304a; --red-bg:#331b1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --card:#171e29; --paper:#1b2330; --ink:#e4e8ef; --muted:#9ba5b6; --line:#2c3646;
+  --navy:#9fb6e6; --navy-ink:#0f141c; --red:#ec8a83; --ok:#7cc4a0; --warn-bg:#2f2614; --warn-ink:#f0cf8f; --hl:#24304a; --red-bg:#331b1a; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--f-body);margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:flex;flex-direction:column;gap:16px}
+h1,h2{font-family:var(--f-display);color:var(--navy);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.15;font-weight:700}
+h2{font-size:21px;line-height:1.25;font-weight:700;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--red)}
+p{margin:0}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--red)}
+header{display:flex;flex-direction:column;gap:10px;padding-block:4px 6px}
+.lead{font-size:17px;color:var(--muted);max-width:62ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.note{font-size:14.5px;color:var(--muted)}
+.priv{border-left:3px solid var(--navy);padding:10px 14px;background:var(--card);border-radius:0 8px 8px 0;font-size:14.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 16px}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.f.full{grid-column:1/-1}
+label.l{font-weight:600;font-size:15px}
+.hint{font-weight:400;color:var(--muted);font-size:13.5px}
+input[type=text],input[type=email],select,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink)}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+input.bad{border-color:var(--red)}
+.err{color:var(--red);font-size:13.5px;min-height:0}
+.err:empty{display:none}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+legend{font-weight:600;font-size:15px;padding:0;margin-bottom:4px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:7px;padding:9px 14px;cursor:pointer;background:var(--card)}
+.seg label:has(input:checked){border-color:var(--navy);background:var(--hl);font-weight:600}
+.chk{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.chk input{margin-top:4px;flex:0 0 auto;width:17px;height:17px;accent-color:var(--navy)}
+.chk .em{display:block;font-family:var(--f-mono);font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+.sub{padding-left:27px}
+.cclist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px 18px}
+.letter-head{display:flex;flex-direction:column;gap:6px}
+.letter{font-family:var(--f-display);font-size:16px;line-height:1.55;background:var(--paper);min-height:560px;padding:18px 20px;resize:vertical}
+.edited{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--warn-bg);color:var(--warn-ink);border-radius:7px;padding:10px 12px;font-size:14.5px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:600;font-size:15px;padding:11px 16px;border-radius:7px;border:1px solid var(--navy);background:var(--navy);color:var(--navy-ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.sec{background:transparent;color:var(--navy)}
+.btn.small{padding:7px 12px;font-size:14px}
+.prov{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px}
+.attach{background:var(--red-bg);color:var(--ink);border:1px solid var(--red);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.attach b{font-size:15.5px;color:var(--red)}
+.attach ol{margin:0;padding-left:22px}
+.missing{color:var(--red);font-weight:600;font-size:14.5px}
+.missing:empty{display:none}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:8px}
+.row:first-child{border-top:0;padding-top:0}
+.row .k{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.row .v{font-family:var(--f-mono);font-size:13px;overflow-wrap:anywhere;min-width:0;max-height:5.2em;overflow:hidden}
+@media (max-width:520px){.row{grid-template-columns:1fr auto}.row .k{grid-column:1/-1}}
+.sub-card{border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.sub-card h3{margin:0;font-size:17px;color:var(--navy)}
+.em-in{display:block;font-family:var(--f-mono);font-size:12.5px;overflow-wrap:anywhere}
+details.pv summary{cursor:pointer;font-size:14.5px;color:var(--navy);font-weight:600}
+details.pv pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:10px 12px;margin:8px 0 0;overflow-wrap:anywhere}
+.toast{color:var(--ok);font-weight:600;font-size:14.5px;min-height:1.4em}
+ol.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .15s,color .15s}}
+.btn.sec:hover{background:var(--hl)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Hitno · pitanje Ambasadi</span>
+  <h1>Pitaj Ambasadu u Abu Dabiju za biračko mesto</h1>
+  <p class="lead">Ambasada nam je potvrdila da smo upisani u birački spisak za glasanje u inostranstvu, ali u UAE ipak nije otvoreno biračko mesto. Pošalji Ambasadi mejl i pitaj zašto i da li to još može da se promeni.</p>
+</header>
+
+<p class="priv"><b>Bez ličnih podataka.</b> Za ovo pitanje Ambasadi nisu potrebni JMBG, broj pasoša ni dokumenta, pa ih mejl ne sadrži i ne treba ih dodavati. Stranica ništa ne čuva i ne šalje; mejl šalješ ti, sa svoje adrese.</p>
+
+<section class="card" aria-labelledby="h1s">
+  <h2 id="h1s"><span class="n">1</span>Ko piše</h2>
+  <div class="grid">
+    <div class="f"><label class="l" for="ime">Ime i prezime <span class="hint">(potpis u mejlu)</span></label><input type="text" id="ime" autocomplete="name" placeholder="npr. Jovana Petrović"></div>
+    <div class="f"><label class="l" for="rod">Pišem kao</label>
+      <select id="rod"><option value="m">muškarac: dobio sam, prijavio sam se</option><option value="z">žena: dobila sam, prijavila sam se</option></select></div>
+    <div class="f"><label class="l" for="emirat">Gde živiš</label>
+      <select id="emirat">
+        <option value="">izaberi</option>
+        <option>Dubai</option><option>Abu Dabi</option><option value="Sardza">Šardža</option><option>Ajman</option>
+        <option>Ras al Kajma</option><option value="Fudzejra">Fudžejra</option><option>Um al Kuvejn</option><option value="drugo">drugo mesto</option>
+      </select></div>
+    <div class="f" id="drugo-f" hidden><label class="l" for="drugo">Ime mesta</label><input type="text" id="drugo" placeholder="npr. Al Ain"></div>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="h2s">
+  <h2 id="h2s"><span class="n">2</span>Pregledaj mejl</h2>
+  <p class="note">Svako dobija drugačiji tekst, da mejlovi ne bi bili isti. Izaberi dužinu ili uzmi drugu verziju, pa slobodno dopiši nešto svojim rečima. Tekst je bez slova č, ć, š, ž i đ, da ga nijedan mejl program ne pokvari.</p>
+  <div class="btns">
+    <button type="button" class="btn sec small" data-duz="kratka">Kraći</button>
+    <button type="button" class="btn sec small" data-duz="srednja">Srednji</button>
+    <button type="button" class="btn sec small" data-duz="duga">Duži</button>
+    <button type="button" class="btn small" id="druga">Druga verzija</button>
+  </div>
+  <div class="letter-head"><label class="l" for="predmet">Predmet</label><input type="text" id="predmet"></div>
+  <div class="edited" id="edited" hidden>Ručno si menjao/la tekst, pa se više ne menja sam. <button type="button" class="btn sec small" id="regen">Vrati tekst iz podataka</button></div>
+  <label class="l" for="tekst">Tekst</label>
+  <textarea id="tekst" class="letter" spellcheck="false" style="min-height:420px"></textarea>
+</section>
+
+<section class="card" aria-labelledby="h3s">
+  <h2 id="h3s"><span class="n">3</span>Pošalji sa svoje adrese</h2>
+  <p class="note"><b>Prima:</b> <span style="font-family:var(--f-mono);font-size:14px">izbori.abudhabi@mfa.rs</span> (izborna adresa Ambasade Republike Srbije u Abu Dabiju)</p>
+  <p class="missing" id="missing" role="status"></p>
+  <div class="prov" id="prov">
+    <a class="btn send" id="s-gmail" target="_blank" rel="noopener">Gmail</a>
+    <a class="btn send" id="s-outlook" target="_blank" rel="noopener">Outlook / Hotmail</a>
+    <a class="btn send" id="s-o365" target="_blank" rel="noopener">Outlook (posao, škola)</a>
+    <a class="btn send" id="s-yahoo" target="_blank" rel="noopener">Yahoo Mail</a>
+    <a class="btn sec send" id="s-mailto">Mejl aplikacija</a>
+  </div>
+  <p class="note" id="mob-savet" hidden></p>
+  <p class="missing" id="nije-otvoreno" role="status"></p>
+  <p class="note">Ako dugme ne otvori mejl, napravi nov mejl ručno i kopiraj polje po polje:</p>
+  <div class="rows">
+    <div class="row"><span class="k">Prima</span><span class="v" id="v-to"></span><button type="button" class="btn sec small" data-copy="to">Kopiraj</button></div>
+    <div class="row"><span class="k">Predmet</span><span class="v" id="v-su"></span><button type="button" class="btn sec small" data-copy="su">Kopiraj</button></div>
+    <div class="row"><span class="k">Tekst</span><span class="v" id="v-body"></span><button type="button" class="btn sec small" data-copy="body">Kopiraj</button></div>
+  </div>
+  <p class="toast" id="toast" role="status"></p>
+</section>
+
+<section class="card" aria-labelledby="h4s">
+  <h2 id="h4s">Posle slanja</h2>
+  <ol class="steps">
+    <li>Sačuvaj poslat mejl i odgovor Ambasade, ako stigne.</li>
+    <li>Ako još nisi, pošalji i prigovor RIK-u: <a href="./">srbsuae-spec.github.io/prigovor-rik-uae</a>.</li>
+    <li>Pošalji ovaj link svima iz UAE koji su dobili potvrdu Ambasade.</li>
+  </ol>
+</section>
+
+<footer>
+  <p>Stranica ne koristi kolačiće, analitiku ni server. Sve što upišeš nestaje kad je zatvoriš.</p>
+</footer>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const TO = ["izbori.abudhabi@mfa.rs"];
+
+// ---------- ASCII: bez č, ć, š, ž, đ i ćirilice ----------
+const CYR = "абвгдђежзијклљмнњопрстћуфхцчџш";
+const LAT = ["a","b","v","g","d","dj","e","z","z","i","j","k","l","lj","m","n","nj","o","p","r","s","t","c","u","f","h","c","c","dz","s"];
+function ascii(s) {
+  let r = "";
+  for (const ch of String(s || "")) {
+    const lo = ch.toLowerCase(), i = CYR.indexOf(lo);
+    if (i >= 0) { const t = LAT[i]; r += ch === lo ? t : t.charAt(0).toUpperCase() + t.slice(1); } else r += ch;
+  }
+  return r.replace(/đ/g, "dj").replace(/Đ/g, "Dj").replace(/[„“”«»]/g, '"').replace(/[‘’‚]/g, "'").replace(/[–—]/g, "-").replace(/…/g, "...")
+    .normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^\x00-\x7F]/g, "");
+}
+
+// ---------- predmeti ----------
+const PREDMETI = [
+  "Biracko mesto u UAE - molba za informaciju",
+  "Hitno: glasanje u UAE na izborima 25. oktobra",
+  "Upit u vezi sa birackim mestom u Abu Dabiju",
+  "Zasto u UAE nije odredjeno biracko mesto?",
+  "Glasanje u inostranstvu - UAE nije na listi birackih mesta",
+  "Molba za hitan odgovor - biracko mesto u UAE",
+  "Pitanje o glasanju u UAE",
+  "Biracko mesto u Abu Dabiju - izbori 25. 10. 2026.",
+  "Upis u JBS za glasanje u UAE - kako dalje?",
+  "Glasanje u UAE - molim za informaciju",
+  "Izbori 2026: biracko mesto u Ujedinjenim Arapskim Emiratima",
+  "Hitan upit: biracko mesto u UAE",
+  "Prijavljeni birac iz UAE - pitanje o birackom mestu",
+  "Nema birackog mesta u UAE - molba za objasnjenje",
+  "Glasanje u Abu Dabiju na predstojecim izborima",
+];
+
+// ---------- 30 verzija teksta ----------
+// Svaka verzija dobija: g(muski, zenski), ime, mesto. Sustina je ista: potvrda upisa u JBS, UAE nije u odluci RIK-a,
+// pitanja (broj prijava, predlog Ambasade i MSP-a, razlog, naknadno otvaranje) i molba za hitan odgovor.
+const V = [];
+const add = (duz, f) => V.push({ duz, f });
+
+// --- kratke ---
+add("kratka", (g, ime, m) => `Postovani,
+
+${g("dobio", "dobila")} sam potvrdu da je moj zahtev za glasanje u inostranstvu evidentiran u Jedinstvenom birackom spisku.
+
+Posto UAE nije obuhvacen odlukom RIK-a o birackim mestima u inostranstvu, molim vas za informaciju:
+
+1. Koliko je zahteva za glasanje u UAE primljeno?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju?
+3. Ako jeste, zasto UAE nije uvrsten na listu?
+4. Da li je jos moguce naknadno otvoriti biracko mesto?
+
+Zbog kratkih izbornih rokova, molim za hitan odgovor.
+
+Srdacan pozdrav,
+${ime}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+od Ambasade sam ${g("dobio", "dobila")} obavestenje da je u Jedinstveni biracki spisak upisano da cu glasati u inostranstvu. Medjutim, na listi birackih mesta koju je odredio RIK nema nijednog mesta u UAE.
+
+Molim vas da mi odgovorite:
+- koliko je biraca u UAE iskazalo interesovanje za glasanje,
+- da li je Ambasada predlozila biracko mesto u Abu Dabiju,
+- da li postoji nacin da se ono jos uvek odredi.
+
+Unapred hvala na brzom odgovoru.
+
+${ime}
+${m}, UAE`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+hvala na potvrdi da je moj zahtev za glasanje u inostranstvu upisan u JBS.
+
+Zanima me zasto u odluci RIK-a o birackim mestima nema nijednog mesta u Ujedinjenim Arapskim Emiratima. Da li je Ambasada predlagala otvaranje birackog mesta, koliko je zahteva stiglo iz UAE i da li je jos moguce da se biracko mesto naknadno odredi?
+
+Molim za odgovor sto pre, s obzirom na rokove.
+
+S postovanjem,
+${ime}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+${g("prijavio", "prijavila")} sam se blagovremeno za glasanje u UAE i ${g("dobio", "dobila")} potvrdu od Ambasade da je podatak upisan u birački spisak. UAE ipak nije na listi birackih mesta.
+
+Molim vas za informaciju:
+1. Koliko je prijava iz UAE primljeno?
+2. Da li je biracko mesto u Abu Dabiju predlozeno Ministarstvu spoljnih poslova?
+3. Da li moze jos da se otvori?
+
+Hvala i pozdrav,
+${ime}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+u vezi sa vasim obavestenjem o upisu u Jedinstveni biracki spisak za glasanje u inostranstvu: posto RIK nije odredio biracko mesto u UAE, molim vas da mi kazete koliko je ukupno zahteva primljeno, da li je Ambasada predlozila otvaranje birackog mesta i da li jos postoji mogucnost da se ono otvori.
+
+Molim za hitan odgovor zbog izbornih rokova.
+
+Pozdrav,
+${ime}, ${m}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+moj zahtev za glasanje u inostranstvu je, prema vasem obavestenju, evidentiran u JBS. Ipak, u UAE nije odredjeno biracko mesto.
+
+Imam cetiri pitanja:
+- Koliko je zahteva iz UAE primljeno?
+- Da li je Ambasada predlozila biracko mesto?
+- Zasto UAE nije uvrsten?
+- Moze li se mesto jos naknadno otvoriti?
+
+Hvala unapred na brzom odgovoru.
+${ime}`);
+
+add("kratka", (g, ime, m) => `Dobar dan,
+
+${g("dobio", "dobila")} sam vase obavestenje da sam upisan${g("", "a")} u biracki spisak za glasanje u inostranstvu, ali UAE nije obuhvacen odlukom RIK-a o birackim mestima.
+
+Da li mozete da mi kazete koliko je prijava stiglo iz UAE, da li je Ambasada trazila otvaranje birackog mesta i da li je jos moguce da se ono odredi? Rokovi su kratki, pa bih ${g("bio", "bila")} ${g("zahvalan", "zahvalna")} na brzom odgovoru.
+
+Srdacno,
+${ime}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+molim za kratku informaciju. Ambasada mi je potvrdila da je u JBS upisano da cu glasati u inostranstvu, a RIK nije odredio nijedno biracko mesto u UAE.
+
+1. Koliko je birača iz UAE podnelo zahtev?
+2. Da li je Ambasada predlozila biracko mesto u Abu Dabiju?
+3. Postoji li jos mogucnost da se ono otvori pre izbora?
+
+Hvala,
+${ime}
+${m}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+povodom vaseg obavestenja o upisu u Jedinstveni biracki spisak: buduci da na listi birackih mesta u inostranstvu nema UAE, zanima me da li je Ambasada predlagala biracko mesto, koliko je zahteva primljeno i da li je odluku jos moguce dopuniti.
+
+Zbog kratkih rokova, molim vas za odgovor sto pre.
+
+Lep pozdrav,
+${ime}`);
+
+add("kratka", (g, ime, m) => `Postovani,
+
+${g("prijavljen", "prijavljena")} sam za glasanje u UAE i od vas sam ${g("dobio", "dobila")} potvrdu da je to upisano u JBS. Ipak, biracko mesto u UAE nije odredjeno.
+
+Molim vas da mi odgovorite koliko je zahteva primljeno, da li je otvaranje birackog mesta predlozeno i da li se ono jos moze naknadno otvoriti.
+
+Hvala unapred,
+${ime}
+${m}, UAE`);
+
+// --- srednje ---
+add("srednja", (g, ime, m) => `Postovani,
+
+zahvaljujem na obavestenju da je nadlezna lokalna samouprava evidentirala moj zahtev za glasanje u inostranstvu.
+
+S obzirom na to da Ujedinjeni Arapski Emirati nisu obuhvaceni Odlukom Republicke izborne komisije o odredjivanju birackih mesta u inostranstvu, molim vas za informaciju o sledecem:
+
+1. Koliko je ukupno zahteva za glasanje u UAE primljeno?
+2. Da li je Ambasada predlozila Ministarstvu spoljnih poslova otvaranje birackog mesta u Abu Dabiju?
+3. Da li je Ministarstvo spoljnih poslova predlozilo RIK-u biracko mesto u UAE?
+4. Ukoliko nije, koji je razlog?
+5. Da li postoji mogucnost da se biracko mesto naknadno odredi?
+
+Zbog kratkih izbornih rokova, ${g("bio", "bila")} bih ${g("zahvalan", "zahvalna")} na odgovoru u najkracem roku.
+
+Srdacan pozdrav,
+${ime}
+${m}, UAE`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+obracam vam se povodom glasanja na izborima za narodne poslanike 25. oktobra 2026. godine.
+
+Blagovremeno sam ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu i od Ambasade ${g("dobio", "dobila")} obavestenje da je lokalna samouprava upisala taj podatak u Jedinstveni biracki spisak. U tom obavestenju je navedeno da cete nas, nakon odluke RIK-a, obavestiti o sledecim koracima. Medjutim, RIK nije odredio nijedno biracko mesto u UAE.
+
+Molim vas da mi odgovorite:
+- koliko je zahteva za glasanje u UAE primljeno,
+- da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju,
+- zasto UAE nije uvrsten na listu, i
+- da li je moguce da se biracko mesto naknadno odredi.
+
+Molim za hitan odgovor.
+
+S postovanjem,
+${ime}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+${g("dobio", "dobila")} sam vase obavestenje da je u Jedinstveni biracki spisak upisan podatak da zelim da glasam u inostranstvu. ${g("Ocekivao", "Ocekivala")} sam da cemo posle odluke RIK-a dobiti uputstvo gde i kako glasamo, ali UAE se ne nalazi na listi birackih mesta.
+
+Zato vas ljubazno molim za sledece informacije:
+
+1. Koliko je birača u UAE blagovremeno iskazalo interesovanje za glasanje?
+2. Da li je Ambasada predlozila otvaranje birackog mesta i, ako jeste, kada i kome?
+3. Da li vam je poznat razlog zbog kog UAE nije uvrsten u odluku?
+4. Da li Ministarstvo spoljnih poslova jos moze da dostavi dopunu predloga RIK-u?
+
+Imajuci u vidu rokove, molim vas za odgovor sto pre.
+
+Hvala i srdacan pozdrav,
+${ime}
+${m}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+pisem vam kao ${g("birac", "biracica")} iz UAE ${g("koji je", "koja je")} na vreme ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu. Od Ambasade sam ${g("dobio", "dobila")} potvrdu da je moj zahtev evidentiran u Jedinstvenom birackom spisku.
+
+Nazalost, Odlukom Republicke izborne komisije o birackim mestima u inostranstvu nije odredjeno nijedno biracko mesto u Ujedinjenim Arapskim Emiratima. Ne znam da li cu i gde moci da glasam.
+
+Molim vas da mi pojasnite:
+- koliko je ukupno zahteva iz UAE primljeno i prosledjeno lokalnim samoupravama,
+- da li je Ambasada predlozila biracko mesto u Abu Dabiju,
+- sta je razlog sto biracko mesto nije odredjeno,
+- i da li postoji nacin da se to jos ispravi.
+
+Unapred zahvaljujem na hitnom odgovoru.
+
+${ime}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+zahvaljujem na obavestenju o upisu mog zahteva za glasanje u inostranstvu u Jedinstveni biracki spisak.
+
+U odluci RIK-a o odredjivanju birackih mesta u inostranstvu UAE nije obuhvacen, iako je, koliko znamo, broj prijavljenih u UAE znacajan. Zato vas molim da mi odgovorite na nekoliko pitanja:
+
+1. Koliko je zahteva za glasanje u UAE Ambasada primila?
+2. Da li je Ambasada predlozila Ministarstvu otvaranje birackog mesta?
+3. Da li je Ministarstvo taj predlog prosledilo RIK-u?
+4. Da li je biracko mesto u Abu Dabiju jos uvek moguce odrediti?
+
+Molim za odgovor u najkracem mogucem roku, jer su izborni rokovi kratki.
+
+S postovanjem,
+${ime}
+${m}, Ujedinjeni Arapski Emirati`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+kao ${g("drzavljanin", "drzavljanka")} Srbije sa boravistem u UAE, na vreme sam se ${g("prijavio", "prijavila")} za glasanje u inostranstvu. Vase obavestenje potvrdjuje da je moja prijava upisana u Jedinstveni biracki spisak.
+
+Ipak, kada je RIK doneo odluku o birackim mestima u inostranstvu, UAE nije bio na listi. Molim vas da mi odgovorite:
+
+- Koliko je zahteva za glasanje u UAE stiglo do Ambasade?
+- Da li je Ambasada trazila da se otvori biracko mesto u Abu Dabiju?
+- Ako jeste, da li znate zasto taj predlog nije usvojen?
+- Postoji li mogucnost da se biracko mesto ipak otvori?
+
+Zbog rokova, molim za hitan odgovor.
+
+Srdacno,
+${ime}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+u obavestenju koje sam ${g("dobio", "dobila")} od Ambasade navedeno je da je lokalna samouprava upisala u JBS da zelim da glasam u inostranstvu, kao i da cete nas o sledecim koracima obavestiti posle odluke RIK-a.
+
+Posto je odluka doneta, a u UAE nije odredjeno biracko mesto, molim vas za informaciju sta su sledeci koraci za nas birace u UAE. Posebno me zanima:
+
+1. koliko je zahteva primljeno iz UAE,
+2. da li je Ambasada predlozila otvaranje birackog mesta,
+3. zasto UAE nije uvrsten na listu,
+4. da li Ministarstvo spoljnih poslova moze hitno da predlozi dopunu odluke.
+
+Hvala unapred na brzom odgovoru.
+
+Pozdrav,
+${ime}
+${m}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+obracam vam se sa molbom za hitnu informaciju.
+
+Blagovremeno sam ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu i ${g("dobio", "dobila")} potvrdu da je evidentiran u Jedinstvenom birackom spisku. Odlukom RIK-a o birackim mestima u inostranstvu, medjutim, nije odredjeno nijedno biracko mesto u UAE, pa birači koji su se prijavili ne znaju da li ce moci da glasaju.
+
+Molim vas da mi odgovorite:
+1. Koliko je birača u UAE podnelo zahtev?
+2. Da li je Ambasada predlozila biracko mesto u Abu Dabiju?
+3. Koji je razlog sto UAE nije na listi?
+4. Da li jos postoji mogucnost da se biracko mesto odredi?
+
+Zahvaljujem unapred.
+
+${ime}`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+hvala na obavestenju da je moj zahtev za glasanje u inostranstvu upisan u Jedinstveni biracki spisak.
+
+Na zalost, UAE nije medju drzavama u kojima je RIK odredio biracka mesta. Posto smo na poziv Ambasade prijavljivali glasanje u Abu Dabiju, molim vas za objasnjenje:
+
+- Da li je Ambasada predlozila Ministarstvu spoljnih poslova da se otvori biracko mesto?
+- Da li je Ministarstvo to predlozilo RIK-u?
+- Koliko je ukupno zahteva iz UAE?
+- Moze li se predlog jos dopuniti kako bi biracko mesto bilo naknadno odredjeno?
+
+${g("Bio", "Bila")} bih ${g("zahvalan", "zahvalna")} na sto brzem odgovoru.
+
+S postovanjem,
+${ime}
+${m}, UAE`);
+
+add("srednja", (g, ime, m) => `Postovani,
+
+pisem u vezi sa glasanjem u UAE na izborima 25. oktobra.
+
+Moj zahtev za glasanje u inostranstvu je, prema obavestenju Ambasade, evidentiran u Jedinstvenom birackom spisku. Ipak, u odluci RIK-a ne postoji biracko mesto u Ujedinjenim Arapskim Emiratima.
+
+Molim vas za sledece informacije:
+1. Koliko je zahteva za glasanje u UAE primljeno i prosledjeno lokalnim samoupravama?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju?
+3. Ako nije, zasto?
+4. Ako jeste, zasto predlog nije prihvacen?
+5. Da li postoji mogucnost naknadnog otvaranja birackog mesta?
+
+Molim za hitan odgovor zbog kratkih rokova.
+
+Srdacan pozdrav,
+${ime}`);
+
+// --- duge ---
+add("duga", (g, ime, m) => `Postovani,
+
+zahvaljujem na obavestenju da je nadlezna lokalna samouprava evidentirala moj zahtev za glasanje u inostranstvu.
+
+S obzirom na to da Ujedinjeni Arapski Emirati nisu obuhvaceni Odlukom Republicke izborne komisije o odredjivanju birackih mesta u inostranstvu, ljubazno vas molim za hitnu informaciju o sledecem:
+
+1. Koliko je ukupno zahteva za glasanje u UAE primljeno i prosledjeno nadleznim lokalnim samoupravama?
+2. Da li je Ambasada Republike Srbije u Abu Dabiju predlozila Ministarstvu spoljnih poslova otvaranje birackog mesta u Abu Dabiju?
+3. Da li je Ministarstvo spoljnih poslova predlozilo Republickoj izbornoj komisiji otvaranje birackog mesta u UAE?
+4. Ukoliko biracko mesto nije predlozeno, koji je razlog za takvu odluku?
+5. Da li postoji mogucnost da Ministarstvo spoljnih poslova hitno dostavi dopunu predloga RIK-u kako bi biracko mesto u Abu Dabiju bilo naknadno odredjeno?
+
+Posebno napominjem da sam blagovremeno ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu i ${g("dobio", "dobila")} potvrdu da je u Jedinstveni biracki spisak upisan podatak da sam ${g("iskazao", "iskazala")} interesovanje za glasanje u inostranstvu.
+
+Imajuci u vidu da su gradjani prethodno pozvani da se prijave za glasanje u Ambasadi Republike Srbije u Abu Dabiju, kao i da je, prema informacijama dostupnim medju gradjanima u UAE, broj prijavljenih biraca veoma znacajan, molim vas da ovu situaciju razmotrite po hitnom postupku.
+
+Zbog kratkih izbornih rokova, ${g("bio", "bila")} bih ${g("zahvalan", "zahvalna")} na odgovoru u najkracem mogucem roku.
+
+Srdacan pozdrav,
+${ime}
+${m}, UAE`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+obracam vam se kao ${g("birac", "biracica")} sa boravistem u Ujedinjenim Arapskim Emiratima, povodom izbora za narodne poslanike raspisanih za 25. oktobar 2026. godine.
+
+Na poziv Ambasade blagovremeno sam ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu. Od Ambasade sam potom ${g("dobio", "dobila")} obavestenje da je nadlezna lokalna samouprava upisala taj podatak u Jedinstveni biracki spisak, i da cete nas, nakon odluke Republicke izborne komisije, obavestiti o sledecim koracima.
+
+Republicka izborna komisija je u medjuvremenu donela Odluku o odredjivanju birackih mesta u inostranstvu, ali u njoj nema nijednog birackog mesta u UAE. Time birači koji su ispunili sve sto se od njih trazilo ostaju bez mogucnosti da glasaju.
+
+Zbog toga vas molim za odgovore na sledeca pitanja:
+
+1. Koliko je zahteva za glasanje u UAE Ambasada primila i prosledila lokalnim samoupravama?
+2. Da li je Ambasada predlozila Ministarstvu spoljnih poslova otvaranje birackog mesta u Abu Dabiju i kada?
+3. Da li je Ministarstvo spoljnih poslova taj predlog uputilo Republickoj izbornoj komisiji?
+4. Ako biracko mesto nije predlozeno, na osnovu cega je to odluceno?
+5. Da li Ministarstvo moze hitno da dopuni predlog, kako bi RIK naknadno odredio biracko mesto u UAE?
+
+S obzirom na kratke izborne rokove, molim vas za odgovor sto pre.
+
+S postovanjem,
+${ime}
+${m}, Ujedinjeni Arapski Emirati`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+najpre zahvaljujem Ambasadi na obavestenju da je moj zahtev za glasanje u inostranstvu evidentiran u Jedinstvenom birackom spisku.
+
+Ipak, moram da izrazim zabrinutost. Odluka Republicke izborne komisije o birackim mestima u inostranstvu ne obuhvata Ujedinjene Arapske Emirate, iako se, prema saznanjima medju nasom zajednicom, za glasanje u UAE prijavio veliki broj gradjana, a zakonski kriterijum je 100 birača. U obavestenju Ambasade je navedeno da cete nas posle odluke RIK-a obavestiti o sledecim koracima, pa vas molim da nam kazete kakvi su ti koraci sada.
+
+Konkretno, molim vas za informaciju:
+
+- koliko je ukupno zahteva za glasanje u UAE primljeno,
+- da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju Ministarstvu spoljnih poslova,
+- da li je Ministarstvo taj predlog prosledilo RIK-u,
+- koji je razlog sto biracko mesto u UAE nije odredjeno,
+- i da li je moguce da Ministarstvo hitno dostavi dopunu predloga, kako bi biracko mesto bilo naknadno odredjeno.
+
+Molim vas da ovo razmotrite po hitnom postupku i odgovorite sto pre, jer su rokovi kratki.
+
+Srdacno,
+${ime}
+${m}`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+pisem vam povodom glasanja gradjana Srbije u Ujedinjenim Arapskim Emiratima na predstojecim izborima.
+
+Ambasada je ranije pozvala gradjane da se prijave za glasanje u inostranstvu, i ja sam to ${g("ucinio", "ucinila")} na vreme. Nedavno sam od Ambasade ${g("dobio", "dobila")} potvrdu da je nadlezna lokalna samouprava upisala u Jedinstveni biracki spisak da zelim da glasam u inostranstvu.
+
+Medjutim, u Odluci Republicke izborne komisije o odredjivanju birackih mesta u inostranstvu nema UAE. Ne znam da li je biracko mesto uopste predlagano, niti da li postoji nacin da se ovo ispravi.
+
+Molim vas da mi odgovorite na sledeca pitanja:
+
+1. Koliko je birača u UAE podnelo zahtev za glasanje u inostranstvu?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju?
+3. Da li je Ministarstvo spoljnih poslova predlozilo RIK-u biracko mesto u UAE?
+4. Ako nije, koji je razlog?
+5. Da li Ministarstvo moze da uputi RIK-u dopunu predloga i koliko vremena za to ima?
+
+${g("Bio", "Bila")} bih vam veoma ${g("zahvalan", "zahvalna")} na hitnom odgovoru, posto se izborni rokovi brzo zavrsavaju.
+
+S postovanjem,
+${ime}`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+zahvaljujem na obavestenju od strane Ambasade da je moj zahtev za glasanje u inostranstvu upisan u Jedinstveni biracki spisak.
+
+Posto Ujedinjeni Arapski Emirati nisu obuhvaceni odlukom Republicke izborne komisije o birackim mestima u inostranstvu, obracam vam se sa nekoliko pitanja. Smatram da birači koji su ispunili sve uslove i dobili potvrdu od Ambasade imaju pravo da znaju zasto nece moci da glasaju u UAE.
+
+1. Koliko je zahteva za glasanje u UAE primljeno i prosledjeno lokalnim samoupravama?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju?
+3. Ako jeste, kada je predlog upucen Ministarstvu spoljnih poslova i da li je Ministarstvo predlog prosledilo RIK-u?
+4. Ako nije, koji je razlog?
+5. Da li postoji mogucnost da se odluka dopuni i biracko mesto u UAE naknadno odredi?
+
+Napominjem da sam zahtev ${g("podneo", "podnela")} blagovremeno i da imam potvrdu Ambasade o upisu u JBS.
+
+Zbog kratkih izbornih rokova, molim vas za odgovor u najkracem mogucem roku.
+
+Srdacan pozdrav,
+${ime}
+${m}, UAE`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+obracam vam se sa molbom za hitnu informaciju u vezi sa glasanjem u UAE.
+
+${g("Dobio", "Dobila")} sam vase obavestenje da je lokalna samouprava upisala u Jedinstveni biracki spisak podatak da sam ${g("iskazao", "iskazala")} interesovanje da na predstojecim izborima glasam u inostranstvu. U istom obavestenju ste naveli da cete, posle odluke RIK-a o ispunjenosti uslova, preko sajta Ambasade obavestiti birace o sledecim koracima.
+
+Odluka RIK-a je doneta, ali u UAE nije odredjeno biracko mesto. Mi koji smo se prijavili nismo dobili objasnjenje zasto je tako, iako je, prema podacima iz nase zajednice, broj prijavljenih visestruko veci od zakonskog minimuma od 100 birača.
+
+Zato vas molim da mi odgovorite:
+- koliko je zahteva za glasanje u UAE primljeno,
+- da li je Ambasada predlozila otvaranje birackog mesta,
+- da li je Ministarstvo spoljnih poslova taj predlog uputilo RIK-u,
+- zasto UAE nije uvrsten na listu,
+- da li Ministarstvo moze hitno da dostavi dopunu predloga.
+
+Takodje molim da na sajtu Ambasade objavite informaciju za sve birace iz UAE koji su se prijavili.
+
+Hvala unapred na brzom odgovoru.
+
+S postovanjem,
+${ime}
+${m}`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+kao ${g("drzavljanin", "drzavljanka")} Republike Srbije ${g("koji", "koja")} zivi u Ujedinjenim Arapskim Emiratima, na vreme sam se ${g("prijavio", "prijavila")} za glasanje u inostranstvu i od Ambasade ${g("dobio", "dobila")} potvrdu da je moj zahtev evidentiran u Jedinstvenom birackom spisku.
+
+${g("Bio", "Bila")} sam ${g("iznenadjen", "iznenadjena")} kada sam ${g("video", "videla")} da Odluka Republicke izborne komisije o birackim mestima u inostranstvu ne sadrzi nijedno mesto u UAE. Na prethodnim izborima je, koliko znam, u UAE bilo moguce glasati, a interesovanje nase zajednice je ovoga puta, koliko znamo, jos vece.
+
+Molim vas da mi odgovorite na sledeca pitanja:
+
+1. Koliko je ukupno zahteva za glasanje u UAE primljeno?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju i da li je to prosledjeno Ministarstvu spoljnih poslova?
+3. Da li je Ministarstvo predlozilo RIK-u biracko mesto u UAE?
+4. Ako biracko mesto nije predlozeno, sta je bio razlog?
+5. Da li je jos moguce da se biracko mesto u Abu Dabiju naknadno odredi?
+
+Molim vas da ovo razmotrite hitno, imajuci u vidu da su izborni rokovi veoma kratki.
+
+Srdacno,
+${ime}
+${m}, UAE`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+povodom vaseg obavestenja da je u Jedinstveni biracki spisak upisan moj zahtev za glasanje u inostranstvu, obracam vam se sa nekoliko pitanja koja su za birace u UAE sada vrlo vazna.
+
+Prijavu sam ${g("podneo", "podnela")} blagovremeno, na poziv Ambasade Republike Srbije u Abu Dabiju. Potvrda koju sam ${g("dobio", "dobila")} pokazuje da je prijava pravilno evidentirana. Ipak, Republicka izborna komisija nije odredila nijedno biracko mesto u UAE, pa ostaje nejasno gde i da li cemo moci da glasamo.
+
+Molim vas da mi odgovorite:
+
+1. Koliko je birača u UAE iskazalo interesovanje za glasanje u inostranstvu?
+2. Da li je Ambasada uputila Ministarstvu spoljnih poslova predlog za otvaranje birackog mesta u Abu Dabiju?
+3. Da li je Ministarstvo spoljnih poslova predlozilo biracko mesto u UAE Republickoj izbornoj komisiji?
+4. Ukoliko predlog nije upucen, na osnovu kojih kriterijuma je to odluceno?
+5. Da li je moguce hitno dopuniti predlog kako bi RIK naknadno odredio biracko mesto u UAE?
+
+Molim vas za odgovor u najkracem mogucem roku.
+
+S postovanjem,
+${ime}`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+zahvaljujem Ambasadi na obavestenju da je moj zahtev za glasanje u inostranstvu evidentiran u Jedinstvenom birackom spisku. To je za mene bila vazna potvrda da je sve uradjeno kako treba.
+
+Utoliko je vece razocaranje sto u odluci Republicke izborne komisije o birackim mestima u inostranstvu nema Ujedinjenih Arapskih Emirata. Mnogi gradjani Srbije koji ovde zive i rade prijavili su se na vreme i ocekivali da ce moci da glasaju u Abu Dabiju.
+
+Molim vas da mi pomognete da razumem sta se desilo:
+
+- Koliko je zahteva za glasanje u UAE primljeno i prosledjeno lokalnim samoupravama?
+- Da li je Ambasada predlozila Ministarstvu spoljnih poslova da se otvori biracko mesto u Abu Dabiju?
+- Da li je Ministarstvo predlog uputilo RIK-u, i ako nije, zbog cega?
+- Da li postoji mogucnost da Ministarstvo hitno dostavi dopunu predloga, kako bi biracko mesto u UAE ipak bilo odredjeno?
+
+Zbog kratkih izbornih rokova, ${g("bio", "bila")} bih ${g("zahvalan", "zahvalna")} na odgovoru sto pre.
+
+Srdacan pozdrav,
+${ime}
+${m}, Ujedinjeni Arapski Emirati`);
+
+add("duga", (g, ime, m) => `Postovani,
+
+pisem vam sa molbom za hitnu informaciju o glasanju u Ujedinjenim Arapskim Emiratima na izborima za narodne poslanike 25. oktobra 2026. godine.
+
+Blagovremeno sam ${g("podneo", "podnela")} zahtev za glasanje u inostranstvu, a Ambasada mi je potvrdila da je nadlezna lokalna samouprava upisala taj podatak u Jedinstveni biracki spisak. Ambasada je takodje navela da ce nas posle odluke RIK-a obavestiti o sledecim koracima.
+
+Republicka izborna komisija je odlucila o birackim mestima u inostranstvu, ali UAE nije obuhvacen. Ovo je za mnoge birace u UAE neprijatno iznenadjenje, jer smo postupili tacno prema uputstvima Ambasade.
+
+Molim vas da mi odgovorite:
+1. Koliko je zahteva za glasanje u UAE primljeno?
+2. Da li je Ambasada predlozila otvaranje birackog mesta u Abu Dabiju?
+3. Da li je Ministarstvo spoljnih poslova taj predlog prosledilo RIK-u?
+4. Zbog cega UAE nije uvrsten na listu birackih mesta?
+5. Da li je jos moguce da se biracko mesto naknadno odredi, i sta je za to potrebno?
+
+Unapred zahvaljujem na hitnom odgovoru.
+
+S postovanjem,
+${ime}
+${m}, UAE`);
+
+// ---------- stanje ----------
+let izbor = Math.floor(Math.random() * V.length), predIdx = Math.floor(Math.random() * PREDMETI.length);
+let rucno = false, poslednji = "";
+function podaci() {
+  const em = $("emirat").value;
+  const mesto = em === "drugo" ? $("drugo").value.trim() : em;
+  return { ime: $("ime").value.trim(), z: $("rod").value === "z", mesto };
+}
+function napravi(p) {
+  const g = (m, z) => (p.z ? z : m);
+  return ascii(V[izbor].f(g, p.ime || "[Ime i prezime]", p.mesto || "[mesto]"));
+}
+function nasumicno(duz) {
+  const kandidati = V.map((v, i) => i).filter((i) => (!duz || V[i].duz === duz) && i !== izbor);
+  izbor = kandidati[Math.floor(Math.random() * kandidati.length)];
+  predIdx = Math.floor(Math.random() * PREDMETI.length);
+  $("predmet").value = PREDMETI[predIdx];
+  rucno = false; osvezi();
+}
+const telo = () => ascii($("tekst").value).replace(/\r\n/g, "\n");
+const predmet = () => ascii($("predmet").value);
+function nedostaje(p) {
+  const m = [];
+  if (!p.ime) m.push("ime i prezime");
+  if (!p.mesto) m.push("gde živiš");
+  return m;
+}
+function osvezi() {
+  const p = podaci();
+  $("drugo-f").hidden = $("emirat").value !== "drugo";
+  const novi = napravi(p);
+  if (!rucno) { $("tekst").value = novi; poslednji = novi; }
+  $("edited").hidden = !rucno;
+  const m = nedostaje(p);
+  $("missing").textContent = m.length ? "Još nedostaje: " + m.join(", ") + "." : "";
+  linkovi();
+}
+
+// ---------- slanje (isto kao na stranici za prigovor, testirano na Androidu i iPhone-u) ----------
+function platforma() {
+  const ua = navigator.userAgent || "";
+  const android = /Android/i.test(ua);
+  const ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1);
+  const inapp = /FBAN|FBAV|FB_IAB|FBIOS|Instagram|WhatsApp|Messenger|Viber|Telegram|; wv\)/i.test(ua) || (ios && !/Safari\//.test(ua));
+  return { android, ios, mob: android || ios, inapp };
+}
+const P = platforma();
+function mejlLinkovi(TOa, su, body) {
+  const q = encodeURIComponent, to = TOa.join(",");
+  const parametri = (sep, suKey) => `to=${q(TOa.join(sep))}&${suKey}=${q(su)}&body=${q(body)}`;
+  const mailto = `mailto:${to}?subject=${q(su)}&body=${q(body.replace(/\n/g, "\r\n"))}`;
+  // Android: ceo mailto u intent-u (Gmail ne čita predmet i tekst iz extras); bez aplikacije otvara se veb verzija
+  const ad = mailto.slice(7), ex = (x) => q(x).replace(/;/g, "%3B");
+  const intent = (pkg, web) => `intent:${ad}#Intent;action=android.intent.action.SENDTO;scheme=mailto;package=${pkg};` +
+    `S.android.intent.extra.SUBJECT=${ex(su)};S.android.intent.extra.TEXT=${ex(body)};S.browser_fallback_url=${q(web)};end`;
+  const web = {
+    gmail: `https://mail.google.com/mail/?view=cm&fs=1&${parametri(",", "su")}`,
+    outlook: `https://outlook.live.com/mail/0/deeplink/compose?${parametri(";", "subject")}`,
+    o365: `https://outlook.office.com/mail/deeplink/compose?${parametri(";", "subject")}`,
+    yahoo: `https://compose.mail.yahoo.com/?${parametri(",", "subject")}`,
+  };
+  if (P.android) return {
+    gmail: intent("com.google.android.gm", web.gmail), outlook: intent("com.microsoft.office.outlook", web.outlook),
+    o365: intent("com.microsoft.office.outlook", web.o365), yahoo: intent("com.yahoo.mobile.client.android.mail", web.yahoo), mailto,
+  };
+  if (P.ios) return {
+    gmail: `googlegmail:///co?${parametri(",", "subject")}`, outlook: `ms-outlook://compose?${parametri(",", "subject")}`,
+    o365: `ms-outlook://compose?${parametri(",", "subject")}`, yahoo: `ymail://mail/compose?${parametri(",", "subject")}`, mailto,
+  };
+  return Object.assign({ mailto }, web);
+}
+function linkovi() {
+  const su = predmet(), body = telo(), u = mejlLinkovi(TO, su, body);
+  for (const k of ["gmail", "outlook", "o365", "yahoo", "mailto"]) $("s-" + k).href = u[k];
+  $("v-to").textContent = TO.join(", ");
+  $("v-su").textContent = su;
+  $("v-body").textContent = body.slice(0, 220) + "…";
+}
+(function uredjaj() {
+  if (!P.mob) return;
+  document.querySelectorAll("a.send").forEach((a) => { a.removeAttribute("target"); a.removeAttribute("rel"); });
+  $("s-gmail").textContent = "Gmail aplikacija";
+  $("s-outlook").textContent = "Outlook aplikacija";
+  $("s-o365").hidden = true;
+  $("s-yahoo").textContent = "Yahoo Mail aplikacija";
+  if (P.ios) {
+    $("prov").insertBefore($("s-mailto"), $("s-gmail"));
+    $("s-mailto").classList.remove("sec");
+    $("s-mailto").textContent = "Mail aplikacija (iPhone)";
+  }
+  $("mob-savet").hidden = false;
+  $("mob-savet").textContent = P.inapp
+    ? "Stranica je otvorena unutar druge aplikacije (WhatsApp, Instagram, Viber…), gde dugmad za mejl često ne rade. Otvori je u Chrome-u ili Safariju (⋮ ili ⋯ → Otvori u pregledaču)."
+    : "Na telefonu dugme otvara aplikaciju za mejl, ako je instalirana. Ako se ništa ne desi, probaj drugo dugme ili kopiraj polja ispod.";
+})();
+
+// ---------- događaji ----------
+["ime", "drugo"].forEach((id) => $(id).addEventListener("input", osvezi));
+["rod", "emirat"].forEach((id) => $(id).addEventListener("change", osvezi));
+$("predmet").addEventListener("input", linkovi);
+$("tekst").addEventListener("input", () => { rucno = $("tekst").value !== poslednji; $("edited").hidden = !rucno; linkovi(); });
+$("regen").addEventListener("click", () => { rucno = false; osvezi(); });
+$("druga").addEventListener("click", () => nasumicno());
+document.querySelectorAll("[data-duz]").forEach((b) => b.addEventListener("click", () => nasumicno(b.dataset.duz)));
+
+document.querySelectorAll("a.send").forEach((a) => a.addEventListener("click", (e) => {
+  const m = nedostaje(podaci());
+  if (m.length) {
+    e.preventDefault();
+    $("missing").textContent = "Pre slanja popuni: " + m.join(", ") + ".";
+    $("missing").scrollIntoView({ block: "center", behavior: "smooth" });
+    return;
+  }
+  $("toast").textContent = "Ako se otvorio nov mejl, pošalji ga. Ako se ništa nije otvorilo, kopiraj polja ispod.";
+  $("nije-otvoreno").textContent = "";
+  if (P.mob) {
+    let otislo = false;
+    const vis = () => { if (document.hidden) otislo = true; };
+    document.addEventListener("visibilitychange", vis);
+    window.addEventListener("pagehide", vis);
+    setTimeout(() => {
+      document.removeEventListener("visibilitychange", vis);
+      if (!otislo && !document.hidden) $("nije-otvoreno").textContent = "Izgleda da se aplikacija nije otvorila. Probaj drugo dugme ili kopiraj polja ispod.";
+    }, 2500);
+  }
+}));
+
+async function kopiraj(txt) {
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch (_) {
+    const t = document.createElement("textarea"); t.value = txt; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch (_) {}
+    t.remove(); return ok;
+  }
+}
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+  const k = b.dataset.copy, v = { to: TO.join(", "), su: predmet(), body: telo() }[k];
+  const poruke = { to: "Adresa je kopirana.", su: "Predmet je kopiran.", body: "Tekst je kopiran." };
+  $("toast").textContent = (await kopiraj(v)) ? poruke[k] + " Nalepi u mejl." : "Kopiranje nije uspelo. Označi tekst u koraku 2 i kopiraj ga ručno.";
+}));
+
+$("predmet").value = PREDMETI[predIdx];
+osvezi();
+</script>
+
+</body>
+</html>
